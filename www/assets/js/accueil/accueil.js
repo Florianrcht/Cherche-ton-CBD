@@ -11,7 +11,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 var greenIcon = L.icon({
-  iconUrl: 'greenPing2.png',
+  iconUrl: 'assets/imgs/greenPing2.png',
   iconSize:     [70, 48], // Taille de l'icon
   iconAnchor:   [40, 50], // Pointe de l'image
   popupAnchor:  [-5, -45] // Position de la popup par rapport au ping
