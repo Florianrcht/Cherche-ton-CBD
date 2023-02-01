@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navbar</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../../www/assets/css/accueil/stylenav.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,7 +18,7 @@
     <nav>
 
       <a href="#" class="nav-icon" aria-label="visit homepage" aria-current="page">
-        <img src="ressources/weed.png" alt="weed icon">
+        <img src="../../../www/assets/imgs/weed.png" alt="weed icon">
         <span>ChercheTaFrappe</span>
       </a>
 
@@ -49,6 +49,6 @@
 
     
 
-    <script src="script.js"></script>
+    <script src="../../../www/assets/js/accueil/script.js"></script>
   </body>
 </html>

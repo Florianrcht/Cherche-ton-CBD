@@ -15,7 +15,7 @@
   <head>
     <meta charset="UTF-8">
     <!---<title> Responsive Registration Form | CodingLab </title>--->
-    <link rel="stylesheet" href="../../www/assets/css/login_register/styleregister.css">
+    <link rel="stylesheet" href="../../../www/assets/css/login_register/styleregister.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
@@ -71,7 +71,7 @@
           </div>
         </div>
         <div class="button">
-          <input type="submit" value="Register">
+          <input type="submit" value="S'enregistrer">
         </div>
       </form>
     </div>
