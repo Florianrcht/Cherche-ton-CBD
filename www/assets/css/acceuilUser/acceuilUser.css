@@ -1,0 +1,164 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+    margin: 0%;
+    color: rgb(76, 132, 26)
+}
+
+/* Arrière plan du header jusqu'au bouton shop */
+
+.image-acceuil {
+    background-image: url("/assets/imgs/beuh.jpeg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-bottom: 15%;
+    animation: backgroundAnimation 6s ease-in-out 1;
+  }
+  
+  @keyframes backgroundAnimation {
+    from {
+      background-position: center top;
+    }
+    to {
+      background-position: center bottom;
+    }
+  }
+  
+  
+
+
+/* Styles de la partie accueil ainsi que le bouton jouer */
+
+.titreAccueil {
+    text-align: center;
+    font-size: 400%;
+    text-transform: uppercase;
+}
+
+.accrocheTitre {
+    color : rgb(15, 107, 15);
+    text-align: center;
+    font-weight: lighter;
+}
+
+.blocShop {
+    display: flex;
+    justify-content: center;
+}
+
+.Shop {
+    margin-top: 1%;
+    margin-bottom: 13%;
+    background-color: rgb(76, 132, 26);
+    color: rgb(255, 255, 255);
+    width: 10%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    display: flex;
+    justify-content: center;
+    border-radius: 2px;
+    text-decoration: none;
+}
+
+.Shop:hover {
+    background-color:rgb(124, 241, 21);
+}
+
+
+/* Style de la partie infos sur les créateurs */
+
+.team {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 5%;
+}
+
+.accrocheTeam {
+    text-align: center;
+    margin-top: 0%;
+    color: rgb(76, 132, 26);
+}
+
+.blocCreateurs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#Createurs {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding-top: 90px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+.fa-brands{
+    color: white;
+}
+
+.bloc-bands{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.bloc-bands a{
+    margin-right: 10px;
+}
+
+#nomsTeam {
+    text-align: center;
+    font-size: 110%;
+}
+
+#textJob {
+    text-align: center;
+    color: rgb(76, 132, 26);
+    font-size: 90%;
+}
+
+#Pdp {
+    border-radius: 100px;
+    width: 130px;
+}
+
+/* Style de la partie infomartions et contacts */
+
+.backgroundInfosContact {
+    background-color: rgba(13,11,38,255);
+}
+
+.informations {
+    display: flex;
+    justify-content: space-around;
+}
+.descri{
+    display: flex;
+    justify-content: center;
+}
+
+.text{
+    display : flex;
+     
+ }
+ .text1{
+    display : flex; 
+ }
+
+.text2{
+    display : flex; 
+ }
+
+ .image-descri{
+    display: flex;
+    size: 750px;
+ }
+
+ 
