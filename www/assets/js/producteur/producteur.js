@@ -1,5 +1,6 @@
 import * as io from './node_modules/socket.io-client';
 var map = L.map('map');
+var socket = io('http://localhost:3000');
 
 
 window.onload = locate();
@@ -81,6 +82,11 @@ function CréerMarker(event, name){
 
 var resCoordlat;
 var resCoordlng;
+
+socket.on('connect', function() {
+  console.log('Connected to server');
+});
+
 
 io.on('dataReceived', function(results) {
   resCoordlat = results[0].coordlat;
