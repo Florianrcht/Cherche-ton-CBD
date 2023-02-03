@@ -1,19 +1,31 @@
+
 const mysql = require('mysql2');
 const express = require('express');
 const app = express();
 const cors = require('cors');
 
+app.use(cors());
 
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'root',
-  port: 3307,
+  port: 3306,
   database: 'cherchetoncbd'
 });
 
+console.log("dfg");
+app.use(function (req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader('Access-Control-Allow-Methods', '');
+  res.setHeader("Access-Control-Allow-Headers", "*");
+  next();
+});
 
-app.use(cors());
+app.get('/products/:id', function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for all origins!'})
+})
+
 
 
 connection.connect((err) => {
@@ -37,15 +49,8 @@ app.get('/api/data', (req, res) => {
   });
 });
 
-app.Use(async (ctx, next) =>
-{
-  await next();
-  if (ctx.Response.StatusCode == 204)
-  {
-    ctx.Response.ContentLength = 0;
-  }
-});
 
-app.listen(3306, () => {
-  console.log('Server is listening on port 3306');
+
+app.listen(3000, () => {
+  console.log('Server is listening on port 3000');
 });
