@@ -30,8 +30,8 @@
         </button>
         <div class="navlinks-container">
           <a href="#" aria-current="page">Home</a>
-          <a href="../public/acceuil.php">Accueil</a>
-          <a href="../public/contact.php">Contact</a>
+          <a href="../pages/accueil.php">Accueil</a>
+          <a href="../pages/contact.php">Contact</a>
         </div>
       </div>
 
