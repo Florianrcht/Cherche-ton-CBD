@@ -3,10 +3,11 @@ const mysql = require('mysql2');
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const io = require('socket.io')();
 
-app.use(cors());
+app.use(cors()); 
 
-const connection = mysql.createConnection({
+const connection = mysql.createConnection({ // Connection à la base de donnée MySQL
   host: 'localhost',
   user: 'root',
   password: 'root',
@@ -15,7 +16,7 @@ const connection = mysql.createConnection({
 });
 
 console.log("dfg");
-app.use(function (req, res, next) {
+app.use(function (req, res, next) { // Empeche les erreur de CORS
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader('Access-Control-Allow-Methods', '');
   res.setHeader("Access-Control-Allow-Headers", "*");
@@ -37,20 +38,20 @@ connection.connect((err) => {
 });
 
 app.get('/api/data', (req, res) => {
-  connection.query('SELECT * FROM producteur', (error, results) => {
+  connection.query('SELECT coordlat, coordlng FROM store', (error, results) => {
     if (error){
       console.log("error", error);
       res.status(500).json({ error: "Une erreur s'est produite lors de la requête à la base de données" });
     } else {
       res.json(results);
       console.log("connected")
-      res.json({data: 'This is some data from the API'});
-    }
+      io.emit('dataReceived', results); // Sert a transmettre des données entre les pages (window.dispatch fonctionne pas avec Node)
+      }
   });
 });
 
 
 
-app.listen(3000, () => {
+app.listen(3000, () => { // Serveur Node
   console.log('Server is listening on port 3000');
 });

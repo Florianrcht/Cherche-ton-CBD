@@ -1,4 +1,4 @@
-
+import * as io from './node_modules/socket.io-client';
 var map = L.map('map');
 
 
@@ -78,6 +78,24 @@ function CréerMarker(event, name){
     .bindPopup(name)
     .openPopup();
 }
+
+var resCoordlat;
+var resCoordlng;
+
+io.on('dataReceived', function(results) {
+  resCoordlat = results[0].coordlat;
+  resCoordlng = results[0].coordlng;
+  console.log(resCoordlat);
+  console.log(resCoordlng);
+});
+
+function afficherMarker(event, name){
+  event.preventDefault();
+  name = document.querySelector('#name').value
+  L.marker([resCoordlat, resCoordlng], {icon: greenIcon}).addTo(map)
+    .bindPopup(name)
+    .openPopup();
+};
 // Boucle
 //setInterval(locate, 3000);
 
