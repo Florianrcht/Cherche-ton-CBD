@@ -1,6 +1,4 @@
-import * as io from './node_modules/socket.io-client';
 var map = L.map('map');
-var socket = io('http://localhost:3000');
 
 
 window.onload = locate();
@@ -78,30 +76,34 @@ function CréerMarker(event, name){
   L.marker([coordlat, coordlng], {icon: greenIcon}).addTo(map)
     .bindPopup(name)
     .openPopup();
+  requeteSQL();
+}
+function requeteSQL(){
+  
 }
 
 var resCoordlat;
 var resCoordlng;
+let data;
+fetch('http://localhost:3000/api/data')
+  .then(response => response.json())
+  .then(receivedData => {
+    data = receivedData;
+    for (let i = 0; i < data.length; i++) {
+      let resCoordlat = (JSON.parse(data[i].coordlat));
+      let resCoordlng = (JSON.parse(data[i].coordlng));
+      let name = (JSON.stringify(data[i].name));
+      alert(JSON.stringify(data));
+      afficherMarker(data[i].name, resCoordlat, resCoordlng);
+    }
+  });
 
-socket.on('connect', function() {
-  console.log('Connected to server');
-});
-
-
-io.on('dataReceived', function(results) {
-  resCoordlat = results[0].coordlat;
-  resCoordlng = results[0].coordlng;
-  console.log(resCoordlat);
-  console.log(resCoordlng);
-});
-
-function afficherMarker(event, name){
-  event.preventDefault();
-  name = document.querySelector('#name').value
-  L.marker([resCoordlat, resCoordlng], {icon: greenIcon}).addTo(map)
+function afficherMarker(name, coordlat, coordlng){
+  L.marker([coordlat, coordlng], {icon: greenIcon}).addTo(map)
     .bindPopup(name)
     .openPopup();
 };
+
 // Boucle
 //setInterval(locate, 3000);
 

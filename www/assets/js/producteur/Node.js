@@ -3,7 +3,6 @@ const mysql = require('mysql2');
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const io = require('socket.io')();
 
 app.use(cors()); 
 
@@ -38,14 +37,13 @@ connection.connect((err) => {
 });
 
 app.get('/api/data', (req, res) => {
-  connection.query('SELECT coordlat, coordlng FROM store', (error, results) => {
+  connection.query('SELECT coordlat, coordlng, name FROM store', (error, results) => {
     if (error){
       console.log("error", error);
       res.status(500).json({ error: "Une erreur s'est produite lors de la requête à la base de données" });
     } else {
       res.json(results);
       console.log("connected")
-      io.emit('dataReceived', results); // Sert a transmettre des données entre les pages (window.dispatch fonctionne pas avec Node)
       }
   });
 });
