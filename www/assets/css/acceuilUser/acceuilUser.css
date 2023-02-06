@@ -1,11 +1,13 @@
 body {
     font-family: 'Lato', sans-serif;
-    background-color: white;
+    background:white;
+
     margin: 0%;
     color: rgb(76, 132, 26)
 }
 
 /* Arrière plan du header jusqu'au bouton shop */
+  
 
 .image-acceuil {
     background-image: url("/assets/imgs/beuh.jpeg");
@@ -141,24 +143,22 @@ body {
 }
 .descri{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .text{
-    display : flex;
-     
+    justify-content: space-around;
  }
  .text1{
-    display : flex; 
  }
 
 .text2{
-    display : flex; 
+    
  }
 
  .image-descri{
-    display: flex;
     size: 750px;
+    justify-content: space-around;
  }
 
  

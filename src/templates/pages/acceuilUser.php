@@ -22,18 +22,19 @@ ob_start()
         </div>
     </div>
 </div>
-
+<br><br><br>
 <div class="descri">
     <div class="text">
         <div class ="text1">
-            <p><h3>Qu’est ce que le Cannabidiol (CBD) ?</h3><br><br><br>
-                Pour comprendre ce qu'est le CBD, il est important de savoir<br>que la plante de Cannabis est composée de plusieurs molécules,<br> appelées Cannabinoïdes.
+            <h3>Qu’est ce que le Cannabidiol (CBD) ?</h3><br>
+            <p>Pour comprendre ce qu'est le CBD, il est important de savoir<br>que la plante de Cannabis est composée de plusieurs molécules,<br> appelées Cannabinoïdes.
                 Longtemps connue <br> pour sa molécule THC et ses effets psychoactifs, <br> la plante de Cannabis dévoile peu à peu d’autres molécules aux <br> nombreux bienfaits, tels que le CBD.
                 Lorsque <br> la plante contient moins de 0,2% de THC, <br> on parle alors de « fleur de chanvre ».
             </p>
         </div>
+        <br><br><br>
         <div class ="text2">
-            <h3>Quelle différence entre le CBD et le THC ?</h3>
+            <h3>Quelle différence entre le CBD et le THC ?</h3><br>
             <p>À son état naturel, le Cannabis est chargé en moyenne <br> de 15 à 25% de THC. Cette concentration est <br>
                 responsable  des effets psychoactifs, dits « planants ». <br> C’est pourquoi la fleur de Cannabis est considérée 
                 <br> comme un stupéfiant, et sa consommation est illégale <br> en France, et dans plusieurs pays d’Europe.<br>
@@ -78,13 +79,7 @@ ob_start()
 <?php
 $page_content = ob_get_clean();
 
-
-
 ?>
-
-
-
-
 </body>
 </html>
 
