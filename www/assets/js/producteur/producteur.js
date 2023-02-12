@@ -70,6 +70,27 @@ map.on('click', onMapClick);
 
 form.addEventListener('submit', CréerMarker);
 
+function requeteSQL(){
+  console.log("test1");
+  fetch('http://localhost:3000/api/data', {
+  method: 'POST',
+  headers: {
+  'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({sql: "INSERT INTO test (id) VALUES (1)" })
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log("test2");
+  alert(body);
+  console.log(data);
+  alert(data)
+})
+  .catch(error => {
+  console.error('Error:', error);
+});
+}
+
 function CréerMarker(event, name){
   event.preventDefault();
   name = document.querySelector('#name').value
@@ -78,9 +99,7 @@ function CréerMarker(event, name){
     .openPopup();
   requeteSQL();
 }
-function requeteSQL(){
-  
-}
+
 
 var resCoordlat;
 var resCoordlng;
@@ -93,7 +112,6 @@ fetch('http://localhost:3000/api/data')
       let resCoordlat = (JSON.parse(data[i].coordlat));
       let resCoordlng = (JSON.parse(data[i].coordlng));
       let name = (JSON.stringify(data[i].name));
-      alert(JSON.stringify(data));
       afficherMarker(data[i].name, resCoordlat, resCoordlng);
     }
   });
@@ -103,6 +121,7 @@ function afficherMarker(name, coordlat, coordlng){
     .bindPopup(name)
     .openPopup();
 };
+
 
 // Boucle
 //setInterval(locate, 3000);

@@ -22,11 +22,6 @@ app.use(function (req, res, next) { // Empeche les erreur de CORS
   next();
 });
 
-app.get('/products/:id', function (req, res, next) {
-  res.json({msg: 'This is CORS-enabled for all origins!'})
-})
-
-
 
 connection.connect((err) => {
   if (err) {
@@ -48,6 +43,19 @@ app.get('/api/data', (req, res) => {
   });
 });
 
+app.post('/api/data', (req, res) => {
+  console.log("test3");
+  let sql = req.body.sql;
+  console.log(sql);
+  connection.query(sql, (error, results) => {
+    if (error) {
+      console.error(`Error executing SQL query: ${error.stack}`);
+      res.status(500).json({ error: "Une erreur s'est produite lors de l'exécution de la requête SQL" });
+    } else {
+      res.json(results);
+    }
+  });
+});
 
 
 app.listen(3000, () => { // Serveur Node
