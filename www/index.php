@@ -1,4 +1,5 @@
 <?php
+
 header("Access-Control-Allow-Origin: *");
 
 include_once __DIR__ . "/../src/init.php";
@@ -34,3 +35,4 @@ if ($page == 'accueilUser'){
 }
 
 ?>
+
