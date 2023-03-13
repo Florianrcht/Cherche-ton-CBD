@@ -1,4 +1,3 @@
-
 var map = L.map('map');
 
 
@@ -52,11 +51,58 @@ map.on('locationerror', onLocationError);
 function locate() {
   map.locate({setView: true, maxZoom: 20});
 }
-
+var coordlat;
+var coordlng;
+var name;
 var popup = L.popup();
 
-
+function onMapClick(e, name) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+        coordlat = e.latlng.lat;
+        coordlng = e.latlng.lng;
+        document.getElementById("coordlat").value = coordlat;
+        document.getElementById("coordlng").value = coordlng;
+}
 map.on('click', onMapClick);
+
+form.addEventListener('submit', CréerMarker);
+
+function CréerMarker(event, name){
+  event.preventDefault();
+  name = document.querySelector('#name').value
+  L.marker([coordlat, coordlng], {icon: greenIcon}).addTo(map)
+    .bindPopup(name)
+    .openPopup();
+  requeteSQL();
+}
+function requeteSQL(){
+  
+}
+
+var resCoordlat;
+var resCoordlng;
+let data;
+fetch('http://localhost:3000/api/data')
+  .then(response => response.json())
+  .then(receivedData => {
+    data = receivedData;
+    for (let i = 0; i < data.length; i++) {
+      let resCoordlat = (JSON.parse(data[i].coordlat));
+      let resCoordlng = (JSON.parse(data[i].coordlng));
+      let name = (JSON.stringify(data[i].name));
+      alert(JSON.stringify(data));
+      afficherMarker(data[i].name, resCoordlat, resCoordlng);
+    }
+  });
+
+function afficherMarker(name, coordlat, coordlng){
+  L.marker([coordlat, coordlng], {icon: greenIcon}).addTo(map)
+    .bindPopup(name)
+    .openPopup();
+};
 
 // Boucle
 //setInterval(locate, 3000);

@@ -30,7 +30,7 @@
         </button>
         <div class="navlinks-container">
           <a href="#" aria-current="page">Home</a>
-          <a href="../public/acceuil.php">Accueil</a>
+          <a href="../public/acceuil.php">Les Shops</a>
           <a href="../public/contact.php">Contact</a>
         </div>
       </div>
@@ -40,8 +40,8 @@
           <img src="ressources/user.svg" alt="user-icon">
         </a>
         <div class="sign-btns">
-          <button type="button">Inscription</button>
-          <button type="button">Connexion</button>
+          <button type="submit">Inscription</button>
+          <button type="submit">Connexion</button>
         </div>
       </div>
     </nav>

@@ -1,6 +1,6 @@
 body {
     font-family: 'Lato', sans-serif;
-    background:white;
+    background:whitesmoke;
 
     margin: 0%;
     color: rgb(76, 132, 26)
@@ -149,13 +149,6 @@ body {
 .text{
     justify-content: space-around;
  }
- .text1{
- }
-
-.text2{
-    
- }
-
  .image-descri{
     size: 750px;
     justify-content: space-around;
