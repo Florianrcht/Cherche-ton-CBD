@@ -1,10 +1,10 @@
-
 var map = L.map('map');
 
 
 window.onload = locate();
 
 // Token pk.eyJ1IjoiZmxvcmlhbnJjaHQiLCJhIjoiY2xka2p4NG5pMXdoZDNwdDU0ampyMnN6NSJ9.3RuMtRpGhlzYW-W9the7vA
+
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
@@ -52,11 +52,76 @@ map.on('locationerror', onLocationError);
 function locate() {
   map.locate({setView: true, maxZoom: 20});
 }
-
+var coordlat;
+var coordlng;
+var name;
 var popup = L.popup();
 
-
+function onMapClick(e, name) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+        coordlat = e.latlng.lat;
+        coordlng = e.latlng.lng;
+        document.getElementById("coordlat").value = coordlat;
+        document.getElementById("coordlng").value = coordlng;
+}
 map.on('click', onMapClick);
+
+
+function requeteSQL(){
+  console.log("test1");
+  fetch('http://localhost:3000/api/data', {
+  method: 'POST',
+  headers: {
+  'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({sql: "INSERT INTO test (id) VALUES (1)" })
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log("test2");
+  alert(body);
+  console.log(data);
+  alert(data)
+})
+  .catch(error => {
+  console.error('Error:', error);
+});
+}
+
+function CréerMarker(event, name){
+  event.preventDefault();
+  name = document.querySelector('#name').value
+  L.marker([coordlat, coordlng], {icon: greenIcon}).addTo(map)
+    .bindPopup(name)
+    .openPopup();
+  requeteSQL();
+}
+
+
+var resCoordlat;
+var resCoordlng;
+let data;
+fetch('http://localhost:3000/api/data')
+  .then(response => response.json())
+  .then(receivedData => {
+    data = receivedData;
+    for (let i = 0; i < data.length; i++) {
+      let resCoordlat = (JSON.parse(data[i].coordlat));
+      let resCoordlng = (JSON.parse(data[i].coordlng));
+      let name = (JSON.stringify(data[i].name));
+      afficherMarker(data[i].name, resCoordlat, resCoordlng);
+    }
+  });
+
+function afficherMarker(name, coordlat, coordlng){
+  L.marker([coordlat, coordlng], {icon: greenIcon}).addTo(map)
+    .bindPopup(name)
+    .openPopup();
+};
+
 
 // Boucle
 //setInterval(locate, 3000);

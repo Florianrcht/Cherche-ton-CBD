@@ -28,13 +28,27 @@ ob_start()
      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
      crossorigin=""></script>
 
-<script type="module" src="../../assets/js/producteur/producteur.js"></script>
+<script type="module" src="../../assets/js/producteur/producteur.js" ></script>
+
 
 <div id="map"></div>
 
 
 
 <?php
+ $requete_date_inscription = "SELECT pseudo FROM producteur WHERE id=1";
+ $date_inscription = $conn->prepare($requete_date_inscription);
+ $date_inscription->execute();
+ $date_inscription = $date_inscription->fetch();
+ foreach ($date_inscription as $date_login) {
+ }
+?>
+<?=$date_login?>
+
+
+<?php
+
+
 $page_content = ob_get_clean();
 
 
