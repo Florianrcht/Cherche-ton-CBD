@@ -18,6 +18,9 @@ if (isset($_GET['page'])){
 if ($page == 'accueilUser'){
     $pagecss = 'accueilUser';
 }
+if ($page == 'boutiques'){
+    $pagecss = 'boutiques';
+}
 
 
 if ($page == 'accueilUser'){

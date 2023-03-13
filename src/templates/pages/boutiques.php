@@ -19,7 +19,7 @@ ob_start()
      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
      crossorigin=""></script>
 
-<script type="module" src="../../assets/js/accueil/accueil.js"></script>
+<script type="module" src="../../assets/js/boutiques/boutiques.js"></script>
 
 <div id="map"></div>
 
