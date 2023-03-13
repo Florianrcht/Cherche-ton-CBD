@@ -1,4 +1,5 @@
 <?php
+
 header("Access-Control-Allow-Origin: *");
 
 include_once __DIR__ . "/../src/init.php";
@@ -6,8 +7,9 @@ include_once __DIR__ . "/../src/init.php";
 $pagecssautre ='';
 $pagecss ='';
 
-$page ='accueil';
-$pagecss ='accueil';
+$page ='acceuilUser';
+$pagecss ='acceuilUser';
+
 include_once __DIR__ . "/../src/templates/partials/$pagecss/header_".$pagecss.".php";
 
 include_once __DIR__ . "/../src/templates/pages/$page.php";
@@ -56,3 +58,4 @@ if ($page == 'accueil'){
 */
 
 ?>
+
