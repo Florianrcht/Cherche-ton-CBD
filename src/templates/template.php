@@ -15,6 +15,8 @@
 
 <body>
     <?= $page_content; ?>
+
+    <script 
 </body>
 
 </html>

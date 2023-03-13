@@ -1,11 +1,9 @@
-
 var map = L.map('map');
 
 
 window.onload = locate();
 
 // Token pk.eyJ1IjoiZmxvcmlhbnJjaHQiLCJhIjoiY2xka2p4NG5pMXdoZDNwdDU0ampyMnN6NSJ9.3RuMtRpGhlzYW-W9the7vA
-
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
@@ -70,6 +68,7 @@ function onMapClick(e, name) {
 }
 map.on('click', onMapClick);
 
+form.addEventListener('submit', CréerMarker);
 
 function requeteSQL(){
   console.log("test1");

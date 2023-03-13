@@ -3,13 +3,15 @@
 
 <?php
 
-$page_title =" Accueil - CTCBD.com";
+
+$page_title =" Boutiques - CTCBD.com";
 
 ob_start()
 ?>
 <div id="accueil_body1">
 <div id="accueil_title">
-        <h1> Cherche Ton CBD | Accueil </h1>
+
+        <h1> Nos Boutiques | Accueil </h1>
     </div>
 </div>
 
