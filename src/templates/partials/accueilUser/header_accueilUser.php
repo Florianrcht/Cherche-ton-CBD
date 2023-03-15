@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Navbar</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +14,7 @@
   
     <nav>
 
-      <a href="#" class="nav-icon" aria-label="visit homepage" aria-current="page">
+      <a href="/?page=accueilUser" class="nav-icon" aria-label="visit homepage" aria-current="page">
         <img src="assets/imgs/weed.png" alt="weed icon">
         <span>ChercheTaFrappe</span>
       </a>
@@ -29,7 +26,7 @@
           <span></span>
         </button>
         <div class="navlinks-container">
-          <a href="#" aria-current="page">Home</a>
+          <a href="/?page=accueilUser" aria-current="page">Home</a>
           <a href="/?page=boutiques">Les Shops</a>
           <a href="/?page=contact">Contact</a>
         </div>
@@ -37,7 +34,6 @@
 
       <div class="nav-authentication">
         <a href="#" class="sign-user" aria-label="Sign in page">
-          <img src="ressources/user.svg" alt="user-icon">
         </a>
         <div class="sign-btns">
           <button type="submit">Inscription</button>
@@ -49,6 +45,3 @@
 
     
 
-    <script src="script.js"></script>
-  </body>
-</html> 

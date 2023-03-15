@@ -14,7 +14,7 @@ ob_start()
         <h1 class="titreAccueil">Bienvenue !<br>  </h1>
         <p class="accrocheTitre">Venez tester le meilleur CBD 100% BIO</p>
         <div class="blocShop">
-            <a href="shop.php" class="Shop">
+            <a href="?page=boutiques" class="Shop">
                 <div>Trouver un shop !</div>
             </a>
         </div>
@@ -78,5 +78,3 @@ ob_start()
 $page_content = ob_get_clean();
 
 ?>
-</body>
-</html>

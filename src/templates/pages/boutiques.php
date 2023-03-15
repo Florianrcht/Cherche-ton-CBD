@@ -1,6 +1,6 @@
 
-    
 
+    
 <?php
 
 
@@ -11,7 +11,12 @@ ob_start()
 <div id="accueil_body1">
 <div id="accueil_title">
 
+        <br>        
+        <br>
         <h1> Nos Boutiques | Accueil </h1>
+        <br>
+        <br>
+
     </div>
 </div>
 
@@ -34,7 +39,9 @@ $page_content = ob_get_clean();
 
 
 
-
 </body>
+
 </html>
+
+
 

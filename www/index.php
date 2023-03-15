@@ -23,19 +23,18 @@ if ($page == 'boutiques'){
 }
 
 
-if ($page == 'accueilUser'){
-    include_once __DIR__ . "/../src/templates/partials/$pagecss/header_".$pagecss.".php";
-} 
+include_once __DIR__ . "/../src/templates/partials/$pagecss/header_".$pagecss.".php";
+
 
 include_once __DIR__ . "/../src/templates/pages/$page.php";
+
 
 include_once __DIR__ . "/../src/templates/template.php";
 
 
-if ($page == 'accueilUser'){
-    include_once __DIR__ . "/../src/templates/partials/$pagecss/footer_".$pagecss.".php";
+include_once __DIR__ . "/../src/templates/partials/$pagecss/footer_".$pagecss.".php";
     
-}
+
 
 ?>
 
