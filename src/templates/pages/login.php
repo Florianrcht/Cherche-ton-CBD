@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="stylelogin.css">
+    <link rel="stylesheet" href="../../../www/assets/css/login_register/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
@@ -39,7 +39,7 @@
               <div class="button input-box">
                 <input type="submit" value="Envoyer">
               </div>
-              <div class="text sign-up-text">Vous-avez déjà un compte ? <label for="flip">><a href="register.php"> Connectez-vous !</a></label></div>
+              <div class="text sign-up-text">Vous n'avez pas de compte ? <label for="flip">><a href="register.php"> Inscrivez-vous !</a></label></div>
             </div>
         </form>
       </div>
