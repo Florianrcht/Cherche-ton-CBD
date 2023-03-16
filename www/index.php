@@ -27,7 +27,12 @@ if ($page == 'administrateur'){
 if ($page == 'producteur'){
     $pagecss = 'producteur';
 }
-
+if ($page == 'register'){
+    $pagecss = 'register';
+}
+if ($page == 'login'){
+    $pagecss = 'login';
+}
 include_once __DIR__ . "/../src/templates/partials/$pageglobal/header_".$pageglobal.".php";
 
 

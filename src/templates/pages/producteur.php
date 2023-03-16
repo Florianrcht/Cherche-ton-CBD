@@ -22,7 +22,7 @@ ob_start()
     <h2> Formulaire d'adhésion : </h2>
     <br>
     <form action="#" method="POST" id="form">
-        <label for="store_name">(ID PRODUCTEUR) :</label>
+        <label for="prod_id">(ID PRODUCTEUR) :</label>
         <input type="int" id="prod_id" name="prod_id" required><br><br>
 
         <label for="store_name">Nom du magasin :</label>
@@ -47,7 +47,7 @@ ob_start()
         <input type="text" id="coordlng" name="coordlng" required><br><br>
 
         <label for="cbd_products">Produits CBD vendus :</label>
-        <input type="text" name="cbd_products" required></input><br><br>
+        <input type="int" name="cbd_products" required></input><br><br>
         
         <input type="submit" value="Envoyer">
     </form>

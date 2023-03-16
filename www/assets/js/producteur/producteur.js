@@ -68,31 +68,54 @@ function onMapClick(e, name) {
 }
 map.on('click', onMapClick);
 
-form.addEventListener('submit', CréerBoutique);
+form.addEventListener('submit', requeteSQL);
 
-function requeteSQL(){
+function requeteSQL(event){
+  event.preventDefault();
   console.log("test1");
+  
+  // Récupération des valeurs du formulaire
+  const prod_id = document.getElementById("store_name").value;
+  const store_name = document.getElementById("store_name").value;
+  const store_address = document.getElementById("store_address").value;
+  const store_phone = document.getElementById("store_phone").value;
+  const store_email = document.getElementById("store_email").value;
+  const store_website = document.getElementById("store_website").value;
+  const coordlat = document.getElementById("coordlat").value;
+  const coordlng = document.getElementById("coordlng").value;
+  //const cbd_products = document.getElementById("cbd_products").value;
+  console.log("test2");
+
+  
+  // Création de la requête SQL
+  const sql = `INSERT INTO store (id_producteur,enseigne, adresse, numero, email, web, coordlat, coordlng) 
+              VALUES ('${prod_id}', '${store_name}', '${store_address}', '${store_phone}', '${store_email}', '${store_website}', '${coordlat}', '${coordlng}')`;
+
+  console.log("test3");
+
+  // Envoi de la requête SQL au serveur
   fetch('http://localhost:3000/api/data', {
-  method: 'POST',
-  headers: {
-  'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({sql: "INSERT INTO test (id) VALUES (1)" })
-})
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({sql: sql})
+  })
+  
   .then(response => response.json())
   .then(data => {
-    console.log("test2");
-  alert(body);
-  console.log(data);
-  alert(data)
-})
-  .catch(error => {
-  console.error('Error:', error);
-});
+    console.log('Success:', data);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+  console.log("test4");
+
 }
 
+
+
 function CréerBoutique(event, name){
-  event.preventDefault();
   name = document.querySelector('#name').value
   L.marker([coordlat, coordlng], {icon: greenIcon}).addTo(map)
     .bindPopup(name)
