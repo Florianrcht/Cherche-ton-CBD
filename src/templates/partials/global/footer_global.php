@@ -34,6 +34,8 @@
 
     </footer>
 
+</body>
+</html>
 
 
     <!-- Fin du footer --> 
