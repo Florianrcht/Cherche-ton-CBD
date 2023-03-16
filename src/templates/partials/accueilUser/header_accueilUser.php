@@ -36,8 +36,8 @@
         <a href="#" class="sign-user" aria-label="Sign in page">
         </a>
         <div class="sign-btns">
-          <button type="submit">Inscription</button>
-          <button type="submit">Connexion</button>
+          <a href="/?page=register" type="button" id="inscription" >Inscription</a>
+          <a href="/?page=login" type="button" id="connexion" >Connexion</a>
         </div>
       </div>
     </nav>

@@ -21,7 +21,9 @@ if ($page == 'accueilUser'){
 if ($page == 'boutiques'){
     $pagecss = 'boutiques';
 }
-
+if ($page == 'administrateur'){
+    $pagecss = 'administrateur';
+}
 
 include_once __DIR__ . "/../src/templates/partials/$pagecss/header_".$pagecss.".php";
 
