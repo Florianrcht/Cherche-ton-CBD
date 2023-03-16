@@ -4,7 +4,7 @@ header("Access-Control-Allow-Origin: *");
 
 include_once __DIR__ . "/../src/init.php";
 
-$pagecssautre ='';
+$pageglobal ='global';
 $pagecss ='';
 
 $page ='accueilUser';
@@ -24,8 +24,11 @@ if ($page == 'boutiques'){
 if ($page == 'administrateur'){
     $pagecss = 'administrateur';
 }
+if ($page == 'producteur'){
+    $pagecss = 'producteur';
+}
 
-include_once __DIR__ . "/../src/templates/partials/$pagecss/header_".$pagecss.".php";
+include_once __DIR__ . "/../src/templates/partials/$pageglobal/header_".$pageglobal.".php";
 
 
 include_once __DIR__ . "/../src/templates/pages/$page.php";
@@ -34,7 +37,7 @@ include_once __DIR__ . "/../src/templates/pages/$page.php";
 include_once __DIR__ . "/../src/templates/template.php";
 
 
-include_once __DIR__ . "/../src/templates/partials/$pagecss/footer_".$pagecss.".php";
+include_once __DIR__ . "/../src/templates/partials/$pageglobal/footer_".$pageglobal.".php";
     
 
 

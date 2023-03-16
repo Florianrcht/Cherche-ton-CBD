@@ -37,7 +37,7 @@ function onLocationFound(e) {
   var radius = e.accuracy / 2;
 
   current_position = L.marker(e.latlng).addTo(map)
-    .bindPopup("You are within " + radius + " meters from this point").openPopup();
+    .bindPopup("Votre position").openPopup();
 
   current_accuracy = L.circle(e.latlng, radius).addTo(map);
 }
@@ -58,7 +58,7 @@ var coordlng;
 var name;
 var popup = L.popup();
 
-function onMapClick(e, name) {
+/*function onMapClick(e, name) {
     popup
         .setLatLng(e.latlng)
         .setContent("You clicked the map at " + e.latlng.toString())
@@ -68,7 +68,7 @@ function onMapClick(e, name) {
         document.getElementById("coordlat").value = coordlat;
         document.getElementById("coordlng").value = coordlng;
 }
-map.on('click', onMapClick);
+map.on('click', onMapClick);*/
 
 
 function requeteSQL(){

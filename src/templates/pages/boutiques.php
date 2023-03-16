@@ -13,7 +13,7 @@ ob_start()
 
         <br>        
         <br>
-        <h1> Nos Boutiques | Accueil </h1>
+        <h1> Nos Boutiques | CTCBD </h1>
         <br>
         <br>
 

@@ -45,3 +45,7 @@ img.huechange { filter: hue-rotate(120deg); }
     display: flex;
     flex: 1;
 }
+
+#form_prod{
+    text-align: center;
+}
