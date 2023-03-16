@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="stylelogin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
-<body>
+<?php
+
+$page_title =" Accueil - CTCBD.com";
+
+ob_start()
+?>
+
   <div class="container">
     <input type="checkbox" id="flip">
     <div class="cover">
@@ -46,5 +44,7 @@
         
     </div>
   </div>
-</body>
-</html>
+<?php
+$page_content = ob_get_clean();
+
+?>

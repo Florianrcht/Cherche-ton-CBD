@@ -68,7 +68,7 @@ function onMapClick(e, name) {
 }
 map.on('click', onMapClick);
 
-form.addEventListener('submit', CréerMarker);
+form.addEventListener('submit', CréerBoutique);
 
 function requeteSQL(){
   console.log("test1");
@@ -91,7 +91,7 @@ function requeteSQL(){
 });
 }
 
-function CréerMarker(event, name){
+function CréerBoutique(event, name){
   event.preventDefault();
   name = document.querySelector('#name').value
   L.marker([coordlat, coordlng], {icon: greenIcon}).addTo(map)

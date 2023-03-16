@@ -32,7 +32,7 @@ connection.connect((err) => {
 });
 
 app.get('/api/data', (req, res) => {
-  connection.query('SELECT coordlat, coordlng, name FROM store', (error, results) => {
+  connection.query('SELECT coordlat, coordlng, enseigne FROM store', (error, results) => {
     if (error){
       console.log("error", error);
       res.status(500).json({ error: "Une erreur s'est produite lors de la requête à la base de données" });
