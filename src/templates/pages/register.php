@@ -51,7 +51,7 @@ ob_start()
           </label>
           <label for="dot-3">
             <span class="dot three"></span>
-            <span class="gender">Tracteur</span>
+            <span class="gender">Engin Agricole</span>
             </label>
           </div>
         </div>

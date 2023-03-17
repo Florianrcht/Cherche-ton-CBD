@@ -39,7 +39,7 @@ ob_start()
               <div class="button input-box">
                 <input type="submit" value="Envoyer">
               </div>
-              <div class="text sign-up-text">Vous n'avez pas de compte ? <label for="flip">><a href="register.php"> Inscrivez-vous !</a></label></div>
+              <div class="text sign-up-text">Vous n'avez pas de compte ? <label for="flip">><a href="/?page=register"> Inscrivez-vous !</a></label></div>
             </div>
         </form>
       </div>
