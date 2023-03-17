@@ -57,11 +57,17 @@ ob_start()
         </div>
         <div class="button">
           <input type="submit" value="Register">
+          <br>
+          <br>
+          <form action="/?page=accueilUser">
+          <a href="/?page=accueilUser" aria-current="page">Home</a>
+          </form>
         </div>
       </form>
     </div>
   </div>
-<?php
+
+  <?php
 $page_content = ob_get_clean();
 
 ?>

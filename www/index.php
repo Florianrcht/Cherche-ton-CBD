@@ -27,13 +27,9 @@ if ($page == 'administrateur'){
 if ($page == 'producteur'){
     $pagecss = 'producteur';
 }
-if ($page == 'register'){
-    $pagecss = 'register';
+if ($page!="register" && $page!="login"){
+    include_once __DIR__ . "/../src/templates/partials/$pageglobal/header_".$pageglobal.".php";
 }
-if ($page == 'login'){
-    $pagecss = 'login';
-}
-include_once __DIR__ . "/../src/templates/partials/$pageglobal/header_".$pageglobal.".php";
 
 
 include_once __DIR__ . "/../src/templates/pages/$page.php";
@@ -42,9 +38,10 @@ include_once __DIR__ . "/../src/templates/pages/$page.php";
 include_once __DIR__ . "/../src/templates/template.php";
 
 
-include_once __DIR__ . "/../src/templates/partials/$pageglobal/footer_".$pageglobal.".php";
     
-
+if ($page!='register' && $page!='login'){
+    include_once __DIR__ . "/../src/templates/partials/$pageglobal/footer_".$pageglobal.".php";
+}
 
 ?>
 

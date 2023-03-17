@@ -1,41 +1,27 @@
-     <!-- Debut du footer -->
-
-    <footer>
-
-        <div class="footer">
-            <div>
-                <!-- La partie gauche du Footer-->
-                <h3 class="Titre-footer">Information</h3>
-                <br>
-                <p class="gris">Ouvert du lundi au vendredi : 8:00-17:00.</p>
-                <br>
-                <br>
-                <p><strong class="footerOrange">Tel :</strong><span class="gris"> 06 05 04 03 02</span></p>
-                <a href="mailto:CTFCB@gmail.com" target="_blank"><p><strong class="footerOrange">E-mail :</strong><span class="gris"> CTFCBD@support.com </span></p></a>
-                <p><strong class="footerOrange">Location :</strong><span class="gris"> Paris</span></p>
-                <p class="copyright">Copyright © 2022 Tous droits réservés</p>
-
-            </div>
-
-            <div>
-                <h3 class="Titre-footer">Cherche ta frappe</h3>
-                <!-- La partie a droite du Footer avec les liens-->
-                <ul>
-                    <li class="footerOrange"><a href=""><span class="gris2"> Dictionnaire de la beuh ! </span></a></li>
-                    <li class="footerOrange"><a href=""><span class="gris2"> Les mieux notés </span></a></li>
-                    <li class="footerOrange"><a href="contact.php"><span class="gris2"> Nous contacter </span></a></li>
-                    <li class="footerOrange"><a href="connexion.php"><span class="gris2"> Connexion </span></a></li>
-                    <li class="footerOrange"><a href="inscription.php"><span class="gris2"> Inscription </span></a></li>
-
-                </ul>
-
-            </div>
-        </div>
-
-    </footer>
-
-</body>
-</html>
+<footer>
+  <div class="footer-container">
+    <div class="logo">
+        <a href="/?page=accueilUser" class="nav-icon" aria-label="visit homepage" aria-current="page">
+        <img src="assets/imgs/weed.png" alt="weed icon">
+      </a>
+    </div>
+    <div class="coordonnees">
+      <p>Email : contact@cherchetafrappe.com</p>
+      <p>Tel : +33 6 43 18 60 09</p>
+      <p>Adresse : 123 rue de la Frappe, 75001 Paris</p>
+    </div>
+    <div class="footer-social">
+      <a href="https://twitter.com/">
+        <img src="/assets/imgs/twitter.png" alt="Twitter">
+      </a>
+      <a href="https://www.facebook.com/">
+        <img src="/assets/imgs/face.avif" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/">
+        <img src="/assets/imgs/logo-insta.webp" alt="Instagram">
+      </a>
+    </div>
+  </div>
+</footer>
 
 
-    <!-- Fin du footer --> 

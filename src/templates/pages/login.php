@@ -4,15 +4,17 @@ $page_title =" Accueil - CTCBD.com";
 
 ob_start()
 ?>
-
   <div class="container">
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <!--<img src="images/frontImg.jpg" alt="">-->
         <div class="text">
           <span class="text-1">Chaque joint est une <br> nouvelle aventure</span>
           <span class="text-2">Allez vous connecter !</span>
+          <br><br>
+          <form action="/?page=accueilUser">
+          <a href="/?page=accueilUser" aria-current="page">Home</a>
+          </form>
 		  <div class="back">
            <img class="backImg" src="" alt="">
       	  </div>
@@ -37,14 +39,14 @@ ob_start()
               <div class="button input-box">
                 <input type="submit" value="Envoyer">
               </div>
-              <div class="text sign-up-text">Vous-avez déjà un compte ? <label for="flip">><a href="register.php"> Connectez-vous !</a></label></div>
+              <div class="text sign-up-text">Vous n'avez pas de compte ? <label for="flip">><a href="register.php"> Inscrivez-vous !</a></label></div>
             </div>
         </form>
       </div>
         
     </div>
   </div>
-<?php
+  <?php
 $page_content = ob_get_clean();
 
 ?>
