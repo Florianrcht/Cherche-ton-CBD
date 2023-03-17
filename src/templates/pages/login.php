@@ -46,5 +46,13 @@
         
     </div>
   </div>
+<<<<<<< Updated upstream
 </body>
 </html>
+=======
+  
+<?php
+$page_content = ob_get_clean();
+
+?>
+>>>>>>> Stashed changes
