@@ -9,7 +9,7 @@ ob_start()
 <body>
     <?php 
         $file_name = "CONTACT";
-        if (isset($_SESSION['user_id'])) {
+        if (isset($_SESSION['user_id'])) 
     ?>
     <section>
         <div class="infos-container">

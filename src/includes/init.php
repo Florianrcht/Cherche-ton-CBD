@@ -7,4 +7,7 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/includes/database.php';
 
+// fonctions utilitaires
+require_once __DIR__ . '/utils/errors.php';
+
 ?>
