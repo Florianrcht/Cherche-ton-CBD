@@ -1,3 +1,4 @@
+
 var map = L.map('map');
 
 
@@ -53,10 +54,10 @@ function locate() {
 }
 var coordlat;
 var coordlng;
-var name;
+var enseigne;
 var popup = L.popup();
 
-function onMapClick(e, name) {
+function onMapClick(e, enseigne) {
     popup
         .setLatLng(e.latlng)
         .setContent("You clicked the map at " + e.latlng.toString())
@@ -70,12 +71,11 @@ map.on('click', onMapClick);
 
 form.addEventListener('submit', requeteSQL);
 
-function requeteSQL(event){
-  event.preventDefault();
+function requeteSQL(){
   console.log("test1");
   
   // Récupération des valeurs du formulaire
-  const prod_id = document.getElementById("store_name").value;
+  const prod_id = document.getElementById("prod_id").value;
   const store_name = document.getElementById("store_name").value;
   const store_address = document.getElementById("store_address").value;
   const store_phone = document.getElementById("store_phone").value;
@@ -92,9 +92,10 @@ function requeteSQL(event){
               VALUES ('${prod_id}', '${store_name}', '${store_address}', '${store_phone}', '${store_email}', '${store_website}', '${coordlat}', '${coordlng}')`;
 
   console.log("test3");
+  console.log(sql);
 
   // Envoi de la requête SQL au serveur
-  fetch('http://localhost:3000/api/data', {
+  fetch('http://localhost:3001/api/data2', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -107,7 +108,9 @@ function requeteSQL(event){
     console.log('Success:', data);
   })
   .catch((error) => {
-    console.error('Error:', error);
+    console.error('Error:', error.message);
+    console.log(data);
+
   });
   console.log("test4");
 
@@ -115,10 +118,10 @@ function requeteSQL(event){
 
 
 
-function CréerBoutique(event, name){
-  name = document.querySelector('#name').value
+function CréerBoutique(event, enseigne){
+  enseigne = document.querySelector('#enseigne').value
   L.marker([coordlat, coordlng], {icon: greenIcon}).addTo(map)
-    .bindPopup(name)
+    .bindPopup(enseigne)
     .openPopup();
   requeteSQL();
 }
@@ -134,18 +137,17 @@ fetch('http://localhost:3000/api/data')
     for (let i = 0; i < data.length; i++) {
       let resCoordlat = (JSON.parse(data[i].coordlat));
       let resCoordlng = (JSON.parse(data[i].coordlng));
-      let name = (JSON.stringify(data[i].name));
-      afficherMarker(data[i].name, resCoordlat, resCoordlng);
+      let enseigne = (JSON.stringify(data[i].enseigne));
+      afficherMarker(data[i].enseigne, resCoordlat, resCoordlng);
     }
   });
 
-function afficherMarker(name, coordlat, coordlng){
+function afficherMarker(enseigne, coordlat, coordlng){
   L.marker([coordlat, coordlng], {icon: greenIcon}).addTo(map)
-    .bindPopup(name)
+    .bindPopup(enseigne)
     .openPopup();
 };
 
 
 // Boucle
 //setInterval(locate, 3000);
-
