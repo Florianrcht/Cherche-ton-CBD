@@ -71,35 +71,6 @@ var popup = L.popup();
 map.on('click', onMapClick);*/
 
 
-function requeteSQL(){
-  console.log("test1");
-  fetch('http://localhost:3000/api/data', {
-  method: 'POST',
-  headers: {
-  'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({sql: "INSERT INTO test (id) VALUES (1)" })
-})
-  .then(response => response.json())
-  .then(data => {
-    console.log("test2");
-  alert(body);
-  console.log(data);
-  alert(data)
-})
-  .catch(error => {
-  console.error('Error:', error);
-});
-}
-
-function CréerMarker(event, name){
-  event.preventDefault();
-  name = document.querySelector('#name').value
-  L.marker([coordlat, coordlng], {icon: greenIcon}).addTo(map)
-    .bindPopup(name)
-    .openPopup();
-  requeteSQL();
-}
 
 
 var resCoordlat;

@@ -49,3 +49,7 @@ img.huechange { filter: hue-rotate(120deg); }
 #form_prod{
     text-align: center;
 }
+
+#map{
+    border: solid;
+}

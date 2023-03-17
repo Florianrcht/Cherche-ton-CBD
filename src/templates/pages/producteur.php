@@ -47,7 +47,13 @@ ob_start()
         <input type="text" id="coordlng" name="coordlng" required><br><br>
 
         <label for="cbd_products">Produits CBD vendus :</label>
-        <input type="int" name="cbd_products" required></input><br><br>
+        <select id="cbd_products" name="cbd_products" required>
+            <option value="">--Choisissez une option--</option>
+            <option value="Fleurs_CBD">Fleurs de CBD</option>
+            <option value="Huiles_CBD">Huiles de CBD</option>
+            <option value="Cosmetiques_CBD">Cosmétiques au CBD</option>
+            <option value="Vaporisateurs_CBD">Vaporisateurs de CBD</option>
+        </select><br><br>
         
         <input type="submit" value="Envoyer">
     </form>
@@ -60,26 +66,13 @@ ob_start()
 
 <script type="module" src="../../assets/js/producteur/producteur.js"></script>
 
+<br><br>
 <div id="map"></div>
+<br><br>
 
 
 
 <?php
-// Récupérer la position actuelle de l'utilisateur
-$location = file_get_contents('https://ipapi.co/json/');
-$location = json_decode($location, true);
-$latitude = $location['latitude'];
-$longitude = $location['longitude'];
-
-// Effectuer une requête de recherche de magasins de CBD à proximité
-$url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=$latitude,$longitude&radius=50000&type=health&keyword=cbd&key=YOUR_API_KEY";
-$places = file_get_contents($url);
-$places = json_decode($places, true);
-
-// Boucle sur les résultats de la requête et afficher les noms des magasins
-foreach ($places['results'] as $place) {
-  echo $place['name'] . "<br>";
-}
 
 $page_content = ob_get_clean();
 

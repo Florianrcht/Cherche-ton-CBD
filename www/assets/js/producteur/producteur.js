@@ -71,7 +71,8 @@ map.on('click', onMapClick);
 
 form.addEventListener('submit', requeteSQL);
 
-function requeteSQL(){
+function requeteSQL(event){
+  event.preventDefault();
   console.log("test1");
   
   // Récupération des valeurs du formulaire
@@ -83,13 +84,13 @@ function requeteSQL(){
   const store_website = document.getElementById("store_website").value;
   const coordlat = document.getElementById("coordlat").value;
   const coordlng = document.getElementById("coordlng").value;
-  //const cbd_products = document.getElementById("cbd_products").value;
+  const cbd_products = document.getElementById("cbd_products").value;
   console.log("test2");
 
   
   // Création de la requête SQL
-  const sql = `INSERT INTO store (id_producteur,enseigne, adresse, numero, email, web, coordlat, coordlng) 
-              VALUES ('${prod_id}', '${store_name}', '${store_address}', '${store_phone}', '${store_email}', '${store_website}', '${coordlat}', '${coordlng}')`;
+  const sql = `INSERT INTO store (id_producteur,enseigne, adresse, numero, email, web, coordlat, coordlng, type) 
+              VALUES ('${prod_id}', '${store_name}', '${store_address}', '${store_phone}', '${store_email}', '${store_website}', '${coordlat}', '${coordlng}', '${cbd_products}')`;
 
   console.log("test3");
   console.log(sql);
