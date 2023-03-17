@@ -1,4 +1,3 @@
-
 var map = L.map('map');
 
 
@@ -54,10 +53,10 @@ function locate() {
 }
 var coordlat;
 var coordlng;
-var enseigne;
+var name;
 var popup = L.popup();
 
-function onMapClick(e, enseigne) {
+function onMapClick(e, name) {
     popup
         .setLatLng(e.latlng)
         .setContent("You clicked the map at " + e.latlng.toString())
@@ -69,7 +68,7 @@ function onMapClick(e, enseigne) {
 }
 map.on('click', onMapClick);
 
-form.addEventListener('submit', requeteSQL);
+form.addEventListener('submit', CréerMarker);
 
 function requeteSQL(event){
   event.preventDefault();
@@ -106,23 +105,21 @@ function requeteSQL(event){
   
   .then(response => response.json())
   .then(data => {
-    console.log('Success:', data);
-  })
-  .catch((error) => {
-    console.error('Error:', error.message);
-    console.log(data);
-
-  });
-  console.log("test4");
-
+    console.log("test2");
+  alert(body);
+  console.log(data);
+  alert(data)
+})
+  .catch(error => {
+  console.error('Error:', error);
+});
 }
 
-
-
-function CréerBoutique(event, enseigne){
-  enseigne = document.querySelector('#enseigne').value
+function CréerMarker(event, name){
+  event.preventDefault();
+  name = document.querySelector('#name').value
   L.marker([coordlat, coordlng], {icon: greenIcon}).addTo(map)
-    .bindPopup(enseigne)
+    .bindPopup(name)
     .openPopup();
   requeteSQL();
 }
@@ -138,17 +135,18 @@ fetch('http://localhost:3000/api/data')
     for (let i = 0; i < data.length; i++) {
       let resCoordlat = (JSON.parse(data[i].coordlat));
       let resCoordlng = (JSON.parse(data[i].coordlng));
-      let enseigne = (JSON.stringify(data[i].enseigne));
-      afficherMarker(data[i].enseigne, resCoordlat, resCoordlng);
+      let name = (JSON.stringify(data[i].name));
+      afficherMarker(data[i].name, resCoordlat, resCoordlng);
     }
   });
 
-function afficherMarker(enseigne, coordlat, coordlng){
+function afficherMarker(name, coordlat, coordlng){
   L.marker([coordlat, coordlng], {icon: greenIcon}).addTo(map)
-    .bindPopup(enseigne)
+    .bindPopup(name)
     .openPopup();
 };
 
 
 // Boucle
 //setInterval(locate, 3000);
+

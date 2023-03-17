@@ -28,11 +28,10 @@ ob_start()
 
 <div id="map"></div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
+<br><br>
+<br><br>
+
+
 
 <?php
 $page_content = ob_get_clean();

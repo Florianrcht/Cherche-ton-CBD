@@ -1,59 +1,50 @@
-/* Debut du footer */
-
-.footer{
-  padding-top: 50px;
-  background-color: #c9c1c1;
+footer {
+  background-color: #fdfdfd;
+  color: #000000;
+  padding: 20px;
+  font-size: 14px;
+  text-align: center;
+  }
+  
+  .footer-container {
   display: flex;
-  justify-content: space-around;
-}
-
-.Titre-Footer h3{
-  color: black;
-
-}
-
-/* Style de la partie gauche du footer */
-
-.gris{
-  color: black;
-}
-
-.footerOrange{
-  color: black;
-}
-
-.imageLiens{
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  }
+  
+  .logo {
   display: flex;
   align-items: center;
-  height: 40px;
-  padding-top: 50px;
-}
-
-.fa{
-  padding: 10px;
-  color: black;
-  width: 40px;
-  text-align: center;
-  margin-right: 5px;
-  border-radius: 2px;
-}
-
-.copyright{
-  color:black;
-  margin-top: 100px; 
-}
-
-/* Style de la partie droite du footer */
-
-li{
-  margin-top: 20px;
+  }
   
-}
-
-.gris2{
-  color: black;
-}
-
-.gris2:hover{
-  color: white;
-} 
+  .logo img {
+  height: 32px;
+  margin-right: 10px;
+  }
+  
+  .coordonnees {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+  }
+  
+  .coordonnees p {
+  margin: 5px 0;
+  }
+  
+  .footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  }
+  
+  .footer-social img {
+  height: 32px;
+  margin: 0 10px;
+  }
+  
+  
