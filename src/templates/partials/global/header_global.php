@@ -28,6 +28,7 @@
         <div class="navlinks-container">
           <a href="/?page=accueilUser" aria-current="page">Home</a>
           <a href="/?page=boutiques">Les Shops</a>
+          <a href="/?page=producteur">Votre Magasin</a>
           <a href="/?page=contact">Contact</a>
         </div>
       </div>
