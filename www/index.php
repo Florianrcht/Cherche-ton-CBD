@@ -9,11 +9,9 @@ $pagecss ='';
 
 $page ='accueilUser';
 
-
 if (isset($_GET['page'])){
         $page = $_GET['page'];
-    
-
+        
 }
 if ($page == 'accueilUser'){
     $pagecss = 'accueilUser';
