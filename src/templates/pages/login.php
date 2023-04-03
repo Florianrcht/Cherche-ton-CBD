@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
   require_once __DIR__ . '../../../includes/database.php';
 
   // Vérifie si c'est les bonne informations
-  $requestUser = $conn->prepare("SELECT * FROM utilisateurs WHERE email = :email AND password = :password");
+  $requestUser = $conn->prepare("SELECT * FROM users WHERE email = :email AND password = :password");
   $requestUser->execute([
     'email' => $email,
     'password' => $password
