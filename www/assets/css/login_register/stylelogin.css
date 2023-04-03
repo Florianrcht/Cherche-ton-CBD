@@ -146,11 +146,11 @@ body{
 }
 .form-content .input-box input:focus,
 .form-content .input-box input:valid{
-  border-color: #7d2ae8;
+  border-color: #08dc4b;
 }
 .form-content .input-box i{
   position: absolute;
-  color: #7d2ae8;
+  color: #8a898c;
   font-size: 17px;
 }
 .forms .form-content .text{
@@ -179,7 +179,7 @@ body{
   background: #5b13b9;
 }
 .forms .form-content label{
-  color: #5b13b9;
+  color: #04e653;
   cursor: pointer;
 }
 .forms .form-content label:hover{
