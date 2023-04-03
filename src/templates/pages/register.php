@@ -1,24 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style2.css">
-    <title>Register</title>
-</head>
-<body>
+<?php
 
-<!DOCTYPE html>
-<!-- Created By CodingLab - www.codinglabweb.com -->
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <!---<title> Responsive Registration Form | CodingLab </title>--->
-    <link rel="stylesheet" href="../../../www/assets/css/login_register/styleregister.css">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
-<body>
+$page_title =" Accueil - CTCBD.com";
+
+ob_start()
+?>
 
   <div class="container">
     <div class="title">Inscription</div>
@@ -66,25 +51,25 @@
           </label>
           <label for="dot-3">
             <span class="dot three"></span>
-            <span class="gender">Tracteur</span>
+            <span class="gender">Engin Agricole</span>
             </label>
           </div>
         </div>
         <div class="button">
-          <input type="submit" value="S'enregistrer">
+          <input type="submit" value="Register">
+          <br>
+          <br>
+          <form action="/?page=accueilUser">
+          <a href="/?page=accueilUser" aria-current="page">Home</a>
+          </form>
         </div>
       </form>
     </div>
   </div>
 
-</body>
-</html>
+  <?php
+$page_content = ob_get_clean();
 
-
-
-
-</body>
-</html>
-
+?>
 
 

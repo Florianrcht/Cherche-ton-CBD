@@ -1,49 +1,47 @@
 <?php
 
-//include_once __DIR__ . "/../src/init.php";
+header("Access-Control-Allow-Origin: *");
 
-$pagecssautre ='';
+include_once __DIR__ . "/../src/init.php";
+
+$pageglobal ='global';
 $pagecss ='';
 
-$page ='accueil';
+$page ='accueilUser';
+
+
 if (isset($_GET['page'])){
-    if (in_array($_GET['page'], $pages)){
         $page = $_GET['page'];
-    }
+    
 
 }
-if ($page == 'accueil'){
-    $pagecss = 'accueil';
-} elseif ($page == 'espaceAdmin' || $page == 'clientListe' || $page == 'validationUsers' || $page == 'transactions' || $page == 'clientListe'){
-    $pagecss = 'espaceAdmin';
-} elseif ($page == 'espaceFondateur' || $page == 'initialisation') {
-    $pagecss = 'espaceFondateur';
+if ($page == 'accueilUser'){
+    $pagecss = 'accueilUser';
 }
-else {
-    $pagecss = 'autre';
+if ($page == 'boutiques'){
+    $pagecss = 'boutiques';
+}
+if ($page == 'administrateur'){
+    $pagecss = 'administrateur';
+}
+if ($page == 'producteur'){
+    $pagecss = 'producteur';
+}
+if ($page!="register" && $page!="login"){
+    include_once __DIR__ . "/../src/templates/partials/$pageglobal/header_".$pageglobal.".php";
 }
 
 
-if ($page == 'accueil'){
-    include_once __DIR__ . "/../src/templates/partials/$pagecss/header_".$pagecss.".php";
-} elseif ($page == 'login'){
-
-} else {
-    include_once __DIR__ . "/../src/templates/partials/$pagecss/header_".$pagecss.".php";
-}
 include_once __DIR__ . "/../src/templates/pages/$page.php";
+
+
 include_once __DIR__ . "/../src/templates/template.php";
 
 
-if ($page == 'accueil'){
-    include_once __DIR__ . "/../src/templates/partials/$pagecss/footer_".$pagecss.".php";
     
-} elseif ($page == 'login'){
-    
-}else {
-    include_once __DIR__ . "/../src/templates/partials/$pagecss/footer_".$pagecss.".php";
+if ($page!='register' && $page!='login'){
+    include_once __DIR__ . "/../src/templates/partials/$pageglobal/footer_".$pageglobal.".php";
 }
 
-
-
 ?>
+
