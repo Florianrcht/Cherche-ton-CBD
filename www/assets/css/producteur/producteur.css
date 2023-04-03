@@ -61,6 +61,7 @@ img.huechange { filter: hue-rotate(120deg); }
     box-shadow: 0 0 5px #ccc;
     border: 1px solid #ccc;
     background-color: #fff;
+
     padding: 20px;
     border-radius: 5px;
   }
@@ -91,6 +92,7 @@ img.huechange { filter: hue-rotate(120deg); }
     background-color: #333;
     color: #fff;
     padding: 10px 20px;
+
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
@@ -98,6 +100,7 @@ img.huechange { filter: hue-rotate(120deg); }
   
   input[type="submit"]:hover {
     background-color: #555;
+
   }
   
 
@@ -107,3 +110,4 @@ img.huechange { filter: hue-rotate(120deg); }
 }
 
 #form_prod{}
+

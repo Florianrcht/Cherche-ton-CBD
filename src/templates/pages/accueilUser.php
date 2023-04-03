@@ -24,7 +24,9 @@ ob_start()
 <div class="descri">
     <div class="text">
         <div class ="text1">
+        
         <h3>Qu'est-ce que le CDB ?</h3><br>
+
             <p>Pour comprendre ce qu'est le CBD, il est important de savoir<br>que la plante de Cannabis est composée de plusieurs molécules,<br> appelées Cannabinoïdes.
                 Longtemps connue <br> pour sa molécule THC et ses effets psychoactifs, <br> la plante de Cannabis dévoile peu à peu d’autres molécules aux <br> nombreux bienfaits, tels que le CBD.
                 Lorsque <br> la plante contient moins de 0,2% de THC, <br> on parle alors de « fleur de chanvre ».
@@ -68,6 +70,7 @@ ob_start()
                 <img src="assets/imgs/tete.png" alt="Photo de profil " id="Pdp">
                 <p id="nomsTeam">B</p>
                 <p id="textJob"><a href="https://github.com/BastienB27">Developpeur</p>
+
             </div>
         </div>
     </div>
