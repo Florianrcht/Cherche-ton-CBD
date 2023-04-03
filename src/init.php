@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/includes/database.php';
 
+
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
 }
@@ -99,3 +100,4 @@ else {
     header('Location: ?page=accueilUser');
     exit;
 }*/
+?>

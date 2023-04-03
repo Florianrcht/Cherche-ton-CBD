@@ -9,6 +9,7 @@ $pagecss ='';
 
 $page ='accueilUser';
 
+
 if (isset($_GET['page'])){
         $page = $_GET['page'];
         

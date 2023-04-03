@@ -1,6 +1,6 @@
 <?php
 
-$page_title =" Accueil - CTCBD.com";
+$page_title =" Administration - CTCBD.com";
 
 ob_start()
 ?>
@@ -24,9 +24,7 @@ ob_start()
 <div class="descri">
     <div class="text">
         <div class ="text1">
-        
-        <h3>Qu'est-ce que le CDB ?</h3><br>
-
+            <h3>Qu’est ce que le Cannabidiol (CBD) ?</h3><br>
             <p>Pour comprendre ce qu'est le CBD, il est important de savoir<br>que la plante de Cannabis est composée de plusieurs molécules,<br> appelées Cannabinoïdes.
                 Longtemps connue <br> pour sa molécule THC et ses effets psychoactifs, <br> la plante de Cannabis dévoile peu à peu d’autres molécules aux <br> nombreux bienfaits, tels que le CBD.
                 Lorsque <br> la plante contient moins de 0,2% de THC, <br> on parle alors de « fleur de chanvre ».
@@ -57,20 +55,19 @@ ob_start()
             <p class="accrocheTeam">Fumez la vie avant que la vie vous fume !</p>
         <div class="blocCreateurs">
             <div id="Createurs">
-                <img src="assets/imgs/tete.png" alt="Photo de profil " id="Pdp">
+                <img src="assets/imgs/teteBeuh.png" alt="Photo de profil " id="Pdp">
                 <p id="nomsTeam">T</p>
-                <p id="textJob"><a href="https://github.com/TGiraudeau">Developpeur</p>
+                <p id="textJob">Developpeur</p>
             </div>
             <div id="Createurs">
-                <img src="assets/imgs/tete.png" alt="Photo de profil " id="Pdp">
+                <img src="assets/imgs/teteBeuh.png" alt="Photo de profil " id="Pdp">
                 <p id="nomsTeam">F</p>
-                <p id="textJob"><a href="https://github.com/Florianrcht">Developpeur</p>
+                <p id="textJob">Developpeur</p>
             </div>
             <div id="Createurs">
-                <img src="assets/imgs/tete.png" alt="Photo de profil " id="Pdp">
+                <img src="assets/imgs/teteBeuh.png" alt="Photo de profil " id="Pdp">
                 <p id="nomsTeam">B</p>
-                <p id="textJob"><a href="https://github.com/BastienB27">Developpeur</p>
-
+                <p id="textJob">Developpeur</p>
             </div>
         </div>
     </div>

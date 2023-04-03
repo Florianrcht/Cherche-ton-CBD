@@ -69,36 +69,7 @@ body {
 
 /* Style de la partie infos sur les créateurs */
 
-.team {
-    text-align: center;
-    font-size: 40px;
-    margin-top: 5%;
-}
 
-.accrocheTeam {
-    text-align: center;
-    margin-top: 0%;
-    color: rgb(76, 132, 26);
-}
-
-.blocCreateurs {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-#Createurs {
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-    padding-top: 90px;
-    padding-bottom: 50px;
-    padding-left: 30px;
-    padding-right: 30px;
-
-}
 
 .fa-brands{
     color: white;
@@ -114,21 +85,57 @@ body {
     margin-right: 10px;
 }
 
-#nomsTeam {
+.team {
     text-align: center;
-    font-size: 110%;
+    font-size: 300%;
+
+    margin-top: 5%;
 }
 
-#textJob {
+.accrocheTeam {
     text-align: center;
-    color: rgb(76, 132, 26);
-    font-size: 90%;
+    font-size: 150%;
+    margin-bottom: 5%;
+
+}
+
+.blocCreateurs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+
+}
+
+#Createurs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2%;
 }
 
 #Pdp {
-    border-radius: 100px;
-    width: 130px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
 }
+
+#nomsTeam {
+    font-size: 200%;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+#textJob {
+    font-size: 150%;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+
 
 /* Style de la partie infomartions et contacts */
 
@@ -152,3 +159,8 @@ body {
     size: 750px;
     justify-content: space-around;
  }
+
+ .dzfef{
+    background-color: aliceblue;
+ }
+
