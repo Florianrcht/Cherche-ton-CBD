@@ -32,7 +32,7 @@ $pages = [
 
           'accueilInvité', //<--- Pour les invités (1)\\
 
-          'accueilUser', 'boutiques', 'login', 'producteur','register','contact', //<--- Pour les Utilisateurs (10)\\
+          'accueilUser', 'boutiques', 'login', 'producteur','register','contact','profil', //<--- Pour les Utilisateurs (10)\\
 
           'espaceAdmin', //<--- Pour les Admins (2000)\\
 
@@ -48,9 +48,12 @@ $pages = [
 
 //Bannies
 if ($statut == 0) {
-    if ($page === 'accueilUser' || $page === 'boutiques' || $page === 'login' || $page === 'producteur' || $page === 'register' 
-     || $page === 'espaceAdmin' || $page === 'espaceFondateur' 
-     || $page === 'recu' || $page === 'shop') 
+    if (
+        $page === 'recu' || $page === 'shop' 
+     || $page === 'accueilInvité' 
+     || $page === 'accueilUser' || $page === 'boutiques' || $page === 'login' || $page === 'producteur' || $page === 'register'  || $page === 'profil'
+     || $page === 'espaceAdmin' 
+     || $page === 'espaceFondateur')
      {
         header('Location: ?page=espaceBanni');
         exit;
@@ -59,9 +62,12 @@ if ($statut == 0) {
 
 //Invités
 else if ($statut == 1) {
-    if ($page === 'accueilUser' || $page === 'producteur' || $page === 'contact' 
-     || $page === 'espaceAdmin' || $page === 'espaceFondateur' 
-     || $page === 'recu' || $page === 'shop') 
+    if (
+        $page === 'recu' || $page === 'shop' 
+     || $page === 'espaceBanni'
+     || $page === 'accueilUser' || $page === 'producteur' || $page === 'profil'
+     || $page === 'espaceAdmin' 
+     || $page === 'espaceFondateur')
      {
         header('Location: ?page=login');
         exit;
@@ -70,8 +76,13 @@ else if ($statut == 1) {
 
 //Utilisateurs
 else if ($statut == 10) {
-    if ($page === 'espaceFondateur' || $page === 'espaceAdmin' 
-    || $page === 'recu' || $page === 'shop') {
+    if (
+        $page === 'recu' || $page === 'shop' 
+     || $page === 'espaceBanni'
+     || $page === 'accueilInvité' 
+     || $page === 'espaceAdmin' 
+     || $page === 'espaceFondateur')
+     {
         header('Location: ?page=accueilUser');
         exit;
     }
@@ -79,8 +90,10 @@ else if ($statut == 10) {
 
 //Admins
 else if ($statut == 2000) {
-    if ($page === 'espaceFondateur') {
-        header('Location: ?page=accueilUser');
+    if (
+        $page === 'recu' || $page === 'shop' 
+     || $page === 'espaceFondateur')
+     {        header('Location: ?page=accueilUser');
         exit;
     }
 }
