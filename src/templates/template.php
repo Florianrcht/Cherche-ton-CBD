@@ -11,7 +11,8 @@
      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
      crossorigin=""/>
     <title> <?= $page_title;  ?></title>
-
+    <?= $_SESSION['user']['statut'] ?>
+    <?= $_SESSION['user']['id'] ?>
 
 </head>
 

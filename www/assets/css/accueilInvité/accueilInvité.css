@@ -1,0 +1,160 @@
+body {
+    background:whitesmoke;
+    margin: 0%;
+    color: rgb(76, 132, 26)
+}
+
+/* Arrière plan du header jusqu'au bouton shop */
+  
+
+.image-acceuil {
+    background-image: url("/assets/imgs/beuh.jpeg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-bottom: 15%;
+    animation: backgroundAnimation 6s ease-in-out 1;
+  }
+  
+  @keyframes backgroundAnimation {
+    from {
+      background-position: center top;
+    }
+    to {
+      background-position: center bottom;
+    }
+  }
+  
+  
+
+
+/* Styles de la partie accueil ainsi que le bouton jouer */
+
+.titreAccueil {
+    text-align: center;
+    font-size: 400%;
+    text-transform: uppercase;
+}
+
+.accrocheTitre {
+    color : rgb(15, 107, 15);
+    text-align: center;
+    font-weight: lighter;
+}
+
+.blocShop {
+    display: flex;
+    justify-content: center;
+}
+
+.Shop {
+    margin-top: 1%;
+    margin-bottom: 13%;
+    background-color: rgb(76, 132, 26);
+    color: rgb(255, 255, 255);
+    width: 10%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    display: flex;
+    justify-content: center;
+    border-radius: 2px;
+    text-decoration: none;
+}
+
+.Shop:hover {
+    background-color:rgb(124, 241, 21);
+}
+
+
+/* Style de la partie infos sur les créateurs */
+
+
+
+.fa-brands{
+    color: white;
+}
+
+.bloc-bands{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.bloc-bands a{
+    margin-right: 10px;
+}
+
+.team {
+    text-align: center;
+    font-size: 300%;
+    margin-top: 5%;
+}
+
+.accrocheTeam {
+    text-align: center;
+    font-size: 150%;
+    margin-bottom: 5%;
+}
+
+.blocCreateurs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+#Createurs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2%;
+}
+
+#Pdp {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#nomsTeam {
+    font-size: 200%;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+#textJob {
+    font-size: 150%;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+
+/* Style de la partie infomartions et contacts */
+
+.backgroundInfosContact {
+    background-color: rgba(13,11,38,255);
+}
+
+.informations {
+    display: flex;
+    justify-content: space-around;
+}
+.descri{
+    display: flex;
+    justify-content: space-around;
+}
+
+.text{
+    justify-content: space-around;
+ }
+ .image-descri{
+    size: 750px;
+    justify-content: space-around;
+ }
+
+ .dzfef{
+    background-color: aliceblue;
+ }

@@ -5,6 +5,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+
 require_once __DIR__ . '/includes/database.php';
 
 
@@ -29,6 +30,8 @@ $pages = [
 
           'espaceBanni', //<--- Pour les Bannis (0)\\
 
+          'accueilInvité', //<--- Pour les invités (1)\\
+
           'accueilUser', 'boutiques', 'login', 'producteur','register','contact', //<--- Pour les Utilisateurs (10)\\
 
           'espaceAdmin', //<--- Pour les Admins (2000)\\
@@ -50,6 +53,17 @@ if ($statut == 0) {
      || $page === 'recu' || $page === 'shop') 
      {
         header('Location: ?page=espaceBanni');
+        exit;
+    }
+}
+
+//Invités
+else if ($statut == 1) {
+    if ($page === 'accueilUser' || $page === 'producteur' || $page === 'contact' 
+     || $page === 'espaceAdmin' || $page === 'espaceFondateur' 
+     || $page === 'recu' || $page === 'shop') 
+     {
+        header('Location: ?page=login');
         exit;
     }
 }
