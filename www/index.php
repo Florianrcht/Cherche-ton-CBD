@@ -48,26 +48,28 @@ if ($_SESSION['user']['statut'] === 1){
     if ($page!='register' && $page!='login'){
         include_once __DIR__ . "/../src/templates/partials/accueilInvité/footer_accueilInvité.php";
     }
-}
-
-
-
-
-if ($page!="register" && $page!="login"){
-    include_once __DIR__ . "/../src/templates/partials/$pageglobal/header_".$pageglobal.".php";
-}
-
-
-include_once __DIR__ . "/../src/templates/pages/$page.php";
-
-
-include_once __DIR__ . "/../src/templates/template.php";
-
-
+} else {
+    if ($page!="register" && $page!="login"){
+        include_once __DIR__ . "/../src/templates/partials/$pageglobal/header_".$pageglobal.".php";
+    }
     
-if ($page!='register' && $page!='login'){
-    include_once __DIR__ . "/../src/templates/partials/$pageglobal/footer_".$pageglobal.".php";
+    
+    include_once __DIR__ . "/../src/templates/pages/$page.php";
+    
+    
+    include_once __DIR__ . "/../src/templates/template.php";
+    
+    
+        
+    if ($page!='register' && $page!='login'){
+        include_once __DIR__ . "/../src/templates/partials/$pageglobal/footer_".$pageglobal.".php";
+    }
 }
+
+
+
+
+
 
 ?>
 

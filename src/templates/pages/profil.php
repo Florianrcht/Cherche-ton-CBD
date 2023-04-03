@@ -17,7 +17,6 @@ ob_start()
 <br>
 <br><br><br>
 <a href="/?page=disconnect" type="button" id="disconnect" >SE DECONNECTER</a>
-
 <br>
 <br>
 <br>
