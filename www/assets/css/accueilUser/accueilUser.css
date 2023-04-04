@@ -3,13 +3,15 @@ body {
     margin: 0%;
     color: rgb(76, 132, 26)
 }
-
+a {
+    text-decoration: none;
+  }
+  
 /* Arrière plan du header jusqu'au bouton shop */
   
 
 .image-acceuil {
-    background-image: url("/assets/imgs/beuh.jpeg");
-    background-position: center bottom;
+    background-image: url("/assets/imgs/Nbeuh.jpg");
     background-repeat: no-repeat;
     background-size: 100% auto;
     padding-bottom: 15%;
@@ -18,10 +20,10 @@ body {
   
   @keyframes backgroundAnimation {
     from {
-      background-position: center top;
+      background-position: center bottom;
     }
     to {
-      background-position: center bottom;
+      background-position: center top;
     }
   }
   
@@ -97,38 +99,40 @@ body {
 }
 
 .blocCreateurs {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    display: flex;
     align-items: center;
     margin-top: 5%;
 }
 
-#Createurs {
+.Createurs {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 2%;
+    justify-content: center;
+    margin: 12%;
 }
 
-#Pdp {
-    width: 150px;
-    height: 150px;
+.Pdp {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
     border-radius: 50%;
     object-fit: cover;
 }
 
-#nomsTeam {
-    font-size: 200%;
+.nomsTeam {
+    font-size: 20%;
     font-weight: bold;
     margin-top: 5%;
 }
 
-#textJob {
-    font-size: 150%;
+.textJob {
+    font-size: 80%;
     text-align: center;
     margin-top: 2%;
     margin-bottom: 5%;
+
 }
 
 
@@ -151,7 +155,8 @@ body {
     justify-content: space-around;
  }
  .image-descri{
-    size: 750px;
+    width: 105%;
+    height: 90%;
     justify-content: space-around;
  }
 
