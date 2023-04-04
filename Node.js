@@ -39,6 +39,7 @@ connection.connect((err) => {
   console.log(`Connection à la database avec l'ID ${connection.threadId}`);
 });
 
+//Affichage boutiques
 app.get('/api/data', (req, res) => {
   connection.query('SELECT coordlat, coordlng, enseigne FROM store', (error, results) => {
     if (error){
@@ -51,6 +52,7 @@ app.get('/api/data', (req, res) => {
   });
 });
 
+//Création boutiques
 app2.post('/api/data2', (req, res) => {
   let sql = req.body.sql;
   connection.query(sql, (error, results) => {

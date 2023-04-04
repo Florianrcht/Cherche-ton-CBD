@@ -25,6 +25,8 @@ ob_start()
         <div id="form_name">
             <label for="store_name">Nom du magasin :</label>
             <input type="text" id="store_name" name="store_name" required><br><br>
+            
+            <input type="hidden" id="id_producteur" name="id_producteur" value= <?= $_SESSION['user']['id'] ?>>
 
             <label for="store_phone">Téléphone :</label>
             <input type="tel" id="store_phone" name="store_phone" required><br><br>
