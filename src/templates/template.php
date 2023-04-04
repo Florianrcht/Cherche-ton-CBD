@@ -11,6 +11,8 @@
      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
      crossorigin=""/>
     <title> <?= $page_title;  ?></title>
+
+
 </head>
 
 <body>
