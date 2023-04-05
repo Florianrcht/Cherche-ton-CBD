@@ -129,6 +129,7 @@ function afficherMarker(enseigne, coordlat, coordlng){
   form.addEventListener('submit', function(event) {
     requeteSQL(event);
     CréerMarker(event);
+    console.log(coordlat)
   });
   
 

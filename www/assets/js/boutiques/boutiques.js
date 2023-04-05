@@ -98,6 +98,27 @@ function afficherMarker(enseigne, coordlat, coordlng){
 
 
 
+//Affichage de l'itinéraire\\
+/*
+
+var control = L.Routing.control({
+  waypoints: [
+    L.latLng(48.8566, 2.3522), // position de départ
+    L.latLng(45.7640, 4.8357) // position d'arrivée
+  ],
+  show: false // cacher les étapes
+}).addTo(map);
+
+// masquer la boîte de dialogue de l'itinéraire
+control.hideSteps();
+*/
+
+//-------------------------\\
+
+
+
+
+
 
 // Boucle
 //setInterval(locate, 3000);
