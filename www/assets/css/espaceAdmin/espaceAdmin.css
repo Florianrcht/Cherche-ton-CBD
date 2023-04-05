@@ -1,0 +1,20 @@
+
+.tableInfoBoutique{
+    display: flex;
+    justify-content: space-around;
+}
+
+.boutiques{
+    display: flex;
+    justify-content: space-around;
+}
+#operation_auto{
+    margin-bottom: 0%;
+    padding-top: 0%;
+}
+#idUser1{
+    background-color: rgb(35, 228, 35);
+}
+#idUser2{
+    background-color: rgb(250, 82, 82);
+}
