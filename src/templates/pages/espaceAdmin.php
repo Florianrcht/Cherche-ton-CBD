@@ -14,57 +14,51 @@ ob_start()
         <h1 class="titreAccueil">Espace Admin<br>  </h1>
         <br>
         <br>
-        <div class="tableInfoBoutique">
-        <h3 class="tableTitleScores">ID</h3>
-        <h3 class="tableTitleScores">ID du Producteur</h3>
-        <h3 class="tableTitleScores">Enseigne</h3>
-        <h3 class="tableTitleScores">Adresse</h3>
-        <h3 class="tableTitleScores">Numero Téléphone</h3>
-        <h3 class="tableTitleScores">Email</h3>
-        <h3 class="tableTitleScores">Site Web</h3>
-        <h3 class="tableTitleScores">Type Produit</h3>
+        <table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>ID producteur</th>
+      <th>Enseigne</th>
+      <th>Adresse</th>
+      <th>Numéro de Téléphone</th>
+      <th>Email</th>
+      <th>Site Web</th>
+      <th>Type Produit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php 
+    $requeteValidationUser= 'SELECT * FROM store';
 
-    </div>
+    $Validation = $conn -> prepare($requeteValidationUser);
+    $Validation -> execute();
 
- 
-    <div class="tableBoutiques">
-        <?php
-
-            $requeteValidationUser= 'SELECT * FROM store WHERE statut = 0';
-
-            $Validation = $conn -> prepare($requeteValidationUser);
-            $Validation -> execute();
-
-            while($AllValidation = $Validation -> fetch()){
-            ?>
-            <div class="boutiques">
-
-                <p><?= $AllValidation['id'];  ?></p>
-                <p><?= $AllValidation['id_producteur']; ?></p>
-                <p><?= $AllValidation['enseigne'];  ?></p>
-                <p><?= $AllValidation['adresse'];  ?></p>
-                <p><?= $AllValidation['numero'];  ?></p>
-                <p><?= $AllValidation['email']; ?></p>
-                <p><?= $AllValidation['web'];  ?></p>
-                <p><?= $AllValidation['type'];  ?></p>
-
-
-                <div id="operation">
-                    <form method="POST" action="" id="operation_auto">
+    while($AllValidation = $Validation -> fetch()){ 
+        ?>
+      <tr class="tr_données">
+        <td class="td_données"><?= $AllValidation['id']; ?></td>
+        <td  class="td_données"><a href ="?page=espaceFondateur"><?= $AllValidation['id_producteur']; ?></td>
+        <td class="td_données"><?= $AllValidation['enseigne']; ?></td>
+        <td class="td_données"><?= $AllValidation['adresse']; ?></td>
+        <td class="td_données"><?= $AllValidation['numero']; ?></td>
+        <td class="td_données"><?= $AllValidation['email']; ?></td>
+        <td class="td_données"><?= $AllValidation['web']; ?></td>
+        <td class="td_données"><?= $AllValidation['type']; ?></td>
+        <td class="td_données">
+        <form method="POST" action="" id="operation_auto">
                         <input type="hidden" name="idUser1" id="idUser1" value="<?=$AllValidation['id']  ?>">
                         <input type="submit" name="buttonAcceptation" id="idUser1" value="Autorisé">
                     </form>
-                    <form method="POST" action="" id="operation_refu">
-                        <input type="hidden" name="idUser2" id="idUser2" value="<?=$AllValidation['id']  ?>">
-                        <input type="submit" name="buttonRefus" id="idUser2" value="Refusé">
-                    </form>
-                </div>
-            </div>
-            <?php
-            }
-            ?>
-        
-    </div>
+          <form method="POST" action="" id="operation_refu">
+            <input type="hidden" name="idUser2" id="idUser2" value="<?=$AllValidation['id']?>">
+            <input type="submit" name="buttonRefus" id="idUser2" value="Bannir">
+          </form>
+        </td>
+      </tr>
+    <?php } ?>
+  </tbody>
+</table>
 
 
 </main>

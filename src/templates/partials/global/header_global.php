@@ -37,7 +37,7 @@
         <a href="#" class="sign-user" aria-label="Sign in page">
         </a>
         <div class="sign-btns">
-          <a href="/?page=profil" type="button" id="inscription" ><?= $_SESSION['user']['pseudo']?></a>
+          <a href="/?page=profil" type="button" id="inscription" ><?= $_SESSION['user']['prenom']?></a>
         </div>
       </div>
     </nav>

@@ -14,48 +14,44 @@ ob_start()
         <h1 class="titreAccueil">Espace Fondateur<br>  </h1>
         <br>
         <br>
-        <div class="tableInfoBoutique">
-        <h3 class="tableTitleScores">ID</h3>
-        <h3 class="tableTitleScores">Pseudo</h3>
-        <h3 class="tableTitleScores">Email</h3>
-        <h3 class="tableTitleScores">Statut</h3>
+        <table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>Email</th>
+      <th>Numéro</th>
+      <th>Statut</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php 
+    $requeteValidationUser= 'SELECT * FROM users';
 
+    $Validation = $conn -> prepare($requeteValidationUser);
+    $Validation -> execute();
 
-    </div>
-
- 
-    <div class="tableBoutiques">
-        <?php
-
-            $requeteValidationUser= 'SELECT * FROM users';
-
-            $Validation = $conn -> prepare($requeteValidationUser);
-            $Validation -> execute();
-
-            while($AllValidation = $Validation -> fetch()){
-            ?>
-            <div class="boutiques">
-
-                <p><?= $AllValidation['id'];  ?></p>
-                <p><?= $AllValidation['pseudo']; ?></p>
-                <p><?= $AllValidation['password'];  ?></p>
-                <p><?= $AllValidation['email'];  ?></p>
-                <p><?= $AllValidation['statut'];  ?></p>
-
-
-
-                <div id="operation">
-                    <form method="POST" action="" id="operation_refu">
-                        <input type="hidden" name="idUser2" id="idUser2" value="<?=$AllValidation['id']  ?>">
-                        <input type="submit" name="buttonRefus" id="idUser2" value="Bannir">
-                    </form>
-                </div>
-            </div>
-            <?php
-            }
-            ?>
-        
-    </div>
+    while($AllValidation = $Validation -> fetch()){ 
+        ?>
+      <tr class="tr_données">
+        <td class="td_données"><?= $AllValidation['id']; ?></td>
+        <td class="td_données"><?= $AllValidation['prenom']; ?></td>
+        <td class="td_données"><?= $AllValidation['nom']; ?></td>
+        <td class="td_données"><?= $AllValidation['email']; ?></td>
+        <td class="td_données"><?= $AllValidation['numero']; ?></td>
+        <td class="td_données"><?= $AllValidation['statut']; ?></td>
+        <td class="td_données">
+          <form method="POST" action="" id="operation_refu">
+            <input type="hidden" name="idUser2" id="idUser2" value="<?=$AllValidation['id']?>">
+            <input type="submit" name="buttonRefus" id="idUser2" value="Bannir">
+          </form>
+        </td>
+      </tr>
+    <?php } ?>
+  </tbody>
+</table>
 
 
 </main>

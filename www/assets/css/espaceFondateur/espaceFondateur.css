@@ -1,20 +1,17 @@
-
-.tableInfoBoutique{
-    display: flex;
-    justify-content: space-around;
+#operation_auto {
+    margin-bottom: 2%;
+    padding-top: 2%;
 }
-
-.boutiques{
-    display: flex;
-    justify-content: space-around;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid;
 }
-#operation_auto{
-    margin-bottom: 0%;
-    padding-top: 0%;
+.tr_données .td_données{
+    border-collapse: collapse;
+    border: 1px solid;
+    padding: 10px;
 }
-#idUser1{
-    background-color: rgb(35, 228, 35);
-}
-#idUser2{
+#idUser2 {
     background-color: rgb(250, 82, 82);
 }

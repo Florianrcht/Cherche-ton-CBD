@@ -11,7 +11,7 @@ ob_start()
         <br>
         <br>
         <br>
-        <h1 class="titreAccueil">Bienvenue <?= $_SESSION['user']['pseudo']?> !<br>  </h1>
+        <h1 class="titreAccueil">Bienvenue <?= $_SESSION['user']['prenom']?> !<br>  </h1>
         <p class="accrocheTitre">Venez tester le meilleur CBD 100% BIO</p>
         <div class="blocShop">
             <a href="?page=boutiques" class="Shop">
