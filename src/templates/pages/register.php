@@ -1,44 +1,64 @@
 <?php
 
-$page_title =" Accueil - CTCBD.com";
+if (isset($_POST['submit'])) {
+  // Récupération des données du formulaire
+  $nom = $_POST['nom'];
+  $prenom = $_POST['prenom'];
+  $email = $_POST['email'];
+  $numero = $_POST['numero'];
+  $password = $_POST['password'];
+  $genre = $_POST['genre'];
+  $statut = 10;
+
+  // Connexion à la base de données
+  require_once __DIR__ . '../../../includes/database.php';
+
+  // Requête d'insertion dans la table users
+  $requestUser = $conn->prepare("INSERT INTO users (nom, prenom, email, numero, password, genre, statut) VALUES (?, ?, ?, ?, ?, ?, ?)");
+
+  $requestUser->execute([$nom, $prenom, $email, $numero, $password, $genre, $statut]);
+}
+
+
+
+$page_title =" Inscription - CTCBD.com";
 
 ob_start()
 ?>
-
   <div class="container">
     <div class="title">Inscription</div>
     <div class="content">
-      <form action="#">
+      <form action="/?page=register" method="post">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Nom</span>
-            <input type="text" placeholder="Entrer votre nom" required>
+            <input type="text" name="nom" placeholder="Entrer votre nom" required>
           </div>
           <div class="input-box">
             <span class="details">Prénom</span>
-            <input type="text" placeholder="Entrer votre prénom" required>
+            <input type="text" name="prenom" placeholder="Entrer votre prénom" required>
           </div>
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" placeholder="Entrer votre email" required>
+            <input type="email" name="email" placeholder="Entrer votre email" required>
           </div>
           <div class="input-box">
             <span class="details">Numéro de téléphone</span>
-            <input type="text" placeholder="Entrer votre numéro de téléphone" required>
+            <input type="text" name="numero" placeholder="Entrer votre numéro de téléphone" required>
           </div>
           <div class="input-box">
             <span class="details">Mot de passe</span>
-            <input type="text" placeholder="Entrer votre mot de passe" required>
+            <input type="password" name="password" placeholder="Entrer votre mot de passe" required>
           </div>
           <div class="input-box">
             <span class="details">Confirmer le mot de passe</span>
-            <input type="text" placeholder="Confirmer votre mot de passe" required>
+            <input type="password" name="confirmermotdepasse" placeholder="Confirmer votre mot de passe" required>
           </div>
         </div>
         <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <input type="radio" name="gender" id="dot-3">
+          <input type="radio" name="genre" id="dot-1" value="Homme">
+          <input type="radio" name="genre" id="dot-2" value="Femme">
+          <input type="radio" name="genre" id="dot-3" value="Engin Agricole">
           <span class="gender-title">Genre</span>
           <div class="category">
             <label for="dot-1">
@@ -56,20 +76,15 @@ ob_start()
           </div>
         </div>
         <div class="button">
-          <input type="submit" value="Register">
+          <input type="submit" name="submit" value="Register">
           <br>
           <br>
-          <form action="/?page=accueilUser">
           <a href="/?page=accueilUser" aria-current="page">Home</a>
-          </form>
         </div>
       </form>
     </div>
   </div>
-
   <?php
 $page_content = ob_get_clean();
 
 ?>
-
-
