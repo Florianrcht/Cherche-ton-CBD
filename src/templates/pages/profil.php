@@ -10,7 +10,7 @@ ob_start()
 <br>
 <br>
 <br>
-<h3>Bienvenu sur votre profil</h3>
+<h3>Bienvenue sur votre profil</h3>
 <br><br>
 <br>
 <br>

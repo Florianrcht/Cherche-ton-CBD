@@ -58,17 +58,14 @@ ob_start()
         <div class="blocCreateurs">
             <div id="Createurs">
                 <img src="assets/imgs/tete.png" alt="Photo de profil " id="Pdp">
-                <p id="nomsTeam">T</p>
                 <p id="textJob"><a href="https://github.com/TGiraudeau">Developpeur</p>
             </div>
             <div id="Createurs">
                 <img src="assets/imgs/tete.png" alt="Photo de profil " id="Pdp">
-                <p id="nomsTeam">F</p>
                 <p id="textJob"><a href="https://github.com/Florianrcht">Developpeur</p>
             </div>
             <div id="Createurs">
                 <img src="assets/imgs/tete.png" alt="Photo de profil " id="Pdp">
-                <p id="nomsTeam">B</p>
                 <p id="textJob"><a href="https://github.com/BastienB27">Developpeur</p>
 
             </div>

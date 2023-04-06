@@ -41,7 +41,7 @@ connection.connect((err) => {
 
 //Affichage boutiques
 app.get('/api/data', (req, res) => {
-  connection.query('SELECT coordlat, coordlng, enseigne, type FROM store WHERE statut = 1', (error, results) => {
+  connection.query('SELECT coordlat, coordlng, enseigne, type, web FROM store WHERE statut = 1', (error, results) => {
     if (error){
       console.log("error", error);
       res.status(500).json({ error: "Une erreur s'est produite lors de la requête à la base de données" });

@@ -85,15 +85,27 @@ fetch('http://localhost:3000/api/data')
       let resCoordlng = (JSON.parse(data[i].coordlng));
       let enseigne = (JSON.stringify(data[i].enseigne));
       let type = (JSON.stringify(data[i].type));
-      afficherMarker(data[i].enseigne, data[i].type, resCoordlat, resCoordlng);
+      let web = (JSON.stringify(data[i].web));
+      afficherMarker(data[i].enseigne, data[i].type, data[i].type, resCoordlat, resCoordlng);
     }
   });
 
-function afficherMarker(enseigne, type, coordlat, coordlng){
-  L.marker([coordlat, coordlng], {icon: pingBoutique}).addTo(map)
-    .bindPopup(enseigne +" : " + type)
-    .openPopup();
-};
+  function afficherMarker(enseigne, type, web, coordlat, coordlng){
+    const popupContent = document.createElement('div');
+    const popupText = document.createElement('p');
+    popupText.textContent = enseigne + ' : ' + type;
+    popupContent.appendChild(popupText);
+    
+    const popupLink = document.createElement('a');
+    popupLink.textContent = 'Cliquez ici';
+    popupLink.href = web;
+    console.log(web);
+    popupContent.appendChild(popupLink);
+  
+    L.marker([coordlat, coordlng], {icon: pingBoutique}).addTo(map)
+      .bindPopup(popupContent)
+      .openPopup();
+  };
 
 //-----------------------\\
 
