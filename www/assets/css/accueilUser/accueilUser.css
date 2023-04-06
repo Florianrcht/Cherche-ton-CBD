@@ -147,5 +147,11 @@ a {
  
 
   .option {
-    background-color: rgb(172, 20, 20);
+    background-color: #e0dfdf;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border: solid;
+    border-radius: 15%;
   }

@@ -3,8 +3,11 @@ footer {
   padding: 20px;
   box-shadow: inset 0px 1px 0px #c5c5c6;
   }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-  
   .footer-container {
   display: flex;
   justify-content: space-between;
@@ -27,18 +30,29 @@ footer {
   display: flex;
   }
 
-  .footer-social a {
-  margin-right: 20px;
-  }
-
   .footer-social img {
-  width: 30px;
-  height: 30px;
+  display: flex;
+  width: 100%;
+  height: 90%;
   }
-
+ .insta{
+  width: 25%;
+  height: 25%;
+ }
+ .twi{
+  width: 28%;
+  height: 28%;
+ }
+ .fa{
+  width: 25%;
+  height: 25%;
+ }
   .logo{
-    display: flex;
+    padding-right: 43%;
     width: 20px;
-    height: 25px;
-  }
 
+    height: 20px;
+  }
+  .coordonnees{
+    padding-right: 30%;
+  }
