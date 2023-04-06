@@ -6,7 +6,8 @@
       </a>
     </div>
     <div class="coordonnees">
-      <p>Email : contact@cherchetafrappe.com</p>
+    <a href="mailto:contact@cherchetafrappe.com">E-mail : contact@cherchetafrappe.com</a>
+
       <p>Tel : +33 6 43 18 60 09</p>
       <p>Adresse : 123 rue de la Frappe, 75001 Paris</p>
     </div>

@@ -59,7 +59,6 @@ a {
     padding-bottom: 1.5%;
     display: flex;
     justify-content: center;
-    border-radius: 2px;
     text-decoration: none;
 }
 
@@ -69,22 +68,6 @@ a {
 
 
 /* Style de la partie infos sur les créateurs */
-
-
-
-.fa-brands{
-    color: white;
-}
-
-.bloc-bands{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.bloc-bands a{
-    margin-right: 10px;
-}
 
 .team {
     text-align: center;
@@ -160,6 +143,4 @@ a {
     justify-content: space-around;
  }
 
- .dzfef{
-    background-color: aliceblue;
- }
+ 
