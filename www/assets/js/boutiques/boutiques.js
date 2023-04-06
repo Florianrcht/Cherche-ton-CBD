@@ -70,6 +70,7 @@ function locate() {
 var coordlat;
 var coordlng;
 var enseigne;
+var type;
 var popup = L.popup();
 
 var resCoordlat;
@@ -83,13 +84,14 @@ fetch('http://localhost:3000/api/data')
       let resCoordlat = (JSON.parse(data[i].coordlat));
       let resCoordlng = (JSON.parse(data[i].coordlng));
       let enseigne = (JSON.stringify(data[i].enseigne));
-      afficherMarker(data[i].enseigne, resCoordlat, resCoordlng);
+      let type = (JSON.stringify(data[i].type));
+      afficherMarker(data[i].enseigne, data[i].type, resCoordlat, resCoordlng);
     }
   });
 
-function afficherMarker(enseigne, coordlat, coordlng){
+function afficherMarker(enseigne, type, coordlat, coordlng){
   L.marker([coordlat, coordlng], {icon: pingBoutique}).addTo(map)
-    .bindPopup(enseigne)
+    .bindPopup(enseigne +" : " + type)
     .openPopup();
 };
 

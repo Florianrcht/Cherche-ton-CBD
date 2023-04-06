@@ -25,6 +25,32 @@ $page_title =" Inscription - CTCBD.com";
 
 ob_start()
 ?>
+<div class="plants">
+        <img src="assets/imgs/beuh4.png" id="beuh4_1" onclick="disappear('beuh4_1')">
+    </div>
+    <div class="plants2">
+        <img src="assets/imgs/beuh4.png" id="beuh4_2" onclick="disappear('beuh4_2')">
+    </div>
+    <div class="plants3">
+        <img src="assets/imgs/beuh4.png" id="beuh4_3" onclick="disappear('beuh4_3')">
+    </div>
+    <div class="plants4">
+        <img src="assets/imgs/beuh4.png" id="beuh4_4" onclick="disappear('beuh4_4')">
+    </div>
+    <div class="plants5">
+        <img src="assets/imgs/beuh4.png" id="beuh4_5" onclick="disappear('beuh4_5')">
+    </div>
+
+    <script>
+        function disappear(id) {
+            var beuh4 = document.getElementById(id);
+            beuh4.style.display = "none";
+            setTimeout(function() {
+                beuh4.style.display = "block";
+            }, 3000);
+        }
+    </script>
+
   <div class="container">
     <div class="title">Inscription</div>
     <div class="content">
@@ -63,15 +89,15 @@ ob_start()
           <div class="category">
             <label for="dot-1">
             <span class="dot one"></span>
-            <span class="gender">Homme</span>
-          </label>
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender">Femme</span>
-          </label>
-          <label for="dot-3">
-            <span class="dot three"></span>
-            <span class="gender">Engin Agricole</span>
+                <span class="gender">👨</span>
+              </label>
+              <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="gender">👩</span>
+              </label>
+              <label for="dot-3">
+                <span class="dot three"></span>
+                <span class="gender">🚜</span>
             </label>
           </div>
         </div>
