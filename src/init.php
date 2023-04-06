@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/includes/database.php';
 
+$_SESSION['user']['id']=1;
 
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
