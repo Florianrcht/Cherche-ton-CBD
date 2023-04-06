@@ -14,6 +14,12 @@ ob_start()
         <h1 class="titreAccueil">Espace Fondateur<br>  </h1>
         <br>
         <br>
+        <form action="#" method="POST" id="recherche">
+            <label for="coordlat">Rechercher un utilisateur :</label>
+            <input type="text" id="recherche_boutique" name="recherche_boutique">
+            <input type="submit" id="rechercher" name="rechercher">
+        </form>
+        <br>
         <table>
   <thead>
     <tr>
@@ -28,11 +34,19 @@ ob_start()
   </thead>
   <tbody>
     <?php 
-    $requeteValidationUser= 'SELECT * FROM users';
+    if(isset($_POST['rechercher'])){
+        $recherche = $_POST['recherche_boutique'];
+        $requeteValidationUser= "SELECT * FROM users WHERE (prenom LIKE '%$recherche%' OR nom LIKE '%$recherche%' OR id LIKE '%$recherche%' OR email LIKE '%$recherche%' OR numero LIKE '%$recherche%' OR statut LIKE '%$recherche%')";
+    } else {
+        $requeteValidationUser= 'SELECT * FROM users ';
+    }
+
 
     $Validation = $conn -> prepare($requeteValidationUser);
+    
     $Validation -> execute();
 
+            
     while($AllValidation = $Validation -> fetch()){ 
         ?>
       <tr class="tr_données">

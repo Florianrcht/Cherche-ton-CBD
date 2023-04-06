@@ -13,6 +13,11 @@ ob_start()
         <br>
         <h1 class="titreAccueil">Espace Admin<br>  </h1>
         <br>
+        <form action="#" method="POST" id="recherche">
+            <label for="coordlat">Rechercher une boutique :</label>
+            <input type="text" id="recherche_boutique" name="recherche_boutique">
+            <input type="submit" id="rechercher" name="rechercher">
+        </form>
         <br>
         <table>
   <thead>
@@ -29,7 +34,12 @@ ob_start()
   </thead>
   <tbody>
     <?php 
-    $requeteValidationUser= 'SELECT * FROM store';
+        if(isset($_POST['rechercher'])){
+            $recherche = $_POST['recherche_boutique'];
+            $requeteValidationUser= "SELECT * FROM store WHERE (id LIKE '%$recherche%' OR id_producteur LIKE '%$recherche%' OR enseigne LIKE '%$recherche%' OR adresse LIKE '%$recherche%' OR numero LIKE '%$recherche%' OR email LIKE '%$recherche%' OR web LIKE '%$recherche%' OR type LIKE '%$recherche%')";
+        } else {
+            $requeteValidationUser= 'SELECT * FROM store ';
+        }
 
     $Validation = $conn -> prepare($requeteValidationUser);
     $Validation -> execute();
