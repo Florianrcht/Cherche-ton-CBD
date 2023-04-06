@@ -10,10 +10,10 @@ ob_start()
 	<h1>Contactez-nous !</h1>
 	<form method="post" action="envoyer.php">
 		<label for="nom">Nom :</label>
-		<input type="text" id="nom" name="nom" required>
+		<input type="text" id="nom" name="nom" value=<?=$_SESSION['user']['nom']?>_<?=$_SESSION['user']['prenom']?> required>
 
 		<label for="email">Email :</label>
-		<input type="email" id="email" name="email" required>
+		<input type="email" id="email" name="email" value=<?=$_SESSION['user']['email']?> required>
 
 		<label for="message">Message :</label>
 		<textarea id="message" name="message" required></textarea>

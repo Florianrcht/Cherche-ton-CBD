@@ -11,7 +11,7 @@ ob_start()
         <br>
         <br>
         <br>
-        <h1 class="titreAccueil">Bienvenue <?= $_SESSION['user']['prenom']?> !<br>  </h1>
+        <h1 class="titreAccueil">Bienvenue !<br>  </h1>
         <p class="accrocheTitre">Venez tester le meilleur CBD 100% BIO</p>
         <div class="blocShop">
             <a href="?page=boutiques" class="Shop">
@@ -46,8 +46,8 @@ ob_start()
             </p>
         </div>
     </div>
-    <div>
-        <img src="assets/imgs/beuh2.jpeg"class ="image-descri">
+    <div class ="image-descri">
+        <img src="assets/imgs/beuh2.jpeg">
     </div>
 
 </div>
@@ -56,17 +56,21 @@ ob_start()
             <h2 class="team">Notre Équipe</h2>
             <p class="accrocheTeam">Fumez la vie avant que la vie vous fume !</p>
         <div class="blocCreateurs">
-            <div class="Createurs">
-                <img src="assets/imgs/tete.png" alt="Photo de profil " class="Pdp">
-                <p class="textJob"><a href="https://github.com/TGiraudeau">Developpeur 1ère année <br> à la Coding Factory</p>
+            <div id="Createurs">
+                <img src="assets/imgs/tete.png" alt="Photo de profil " id="Pdp">
+                <p id="nomsTeam">T</p>
+                <p id="textJob"><a href="https://github.com/TGiraudeau">Developpeur</p>
             </div>
-            <div class="Createurs">
-                <img src="assets/imgs/tete.png" alt="Photo de profil " class="Pdp">
-                <p class="textJob"><a href="https://github.com/Florianrcht">Developpeur 1ère année <br> à la Coding Factory</p>
+            <div id="Createurs">
+                <img src="assets/imgs/tete.png" alt="Photo de profil " id="Pdp">
+                <p id="nomsTeam">F</p>
+                <p id="textJob"><a href="https://github.com/Florianrcht">Developpeur</p>
             </div>
-            <div class="Createurs">
-                <img src="assets/imgs/tete.png" alt="Photo de profil " class="Pdp">
-                <p class="textJob"><a href="https://github.com/BastienB27">Developpeur 1ère année <br> à la Coding Factory</p>
+            <div id="Createurs">
+                <img src="assets/imgs/tete.png" alt="Photo de profil " id="Pdp">
+                <p id="nomsTeam">B</p>
+                <p id="textJob"><a href="https://github.com/BastienB27">Developpeur</p>
+
             </div>
         </div>
     </div>

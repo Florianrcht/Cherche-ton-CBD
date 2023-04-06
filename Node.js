@@ -39,8 +39,9 @@ connection.connect((err) => {
   console.log(`Connection à la database avec l'ID ${connection.threadId}`);
 });
 
+//Affichage boutiques
 app.get('/api/data', (req, res) => {
-  connection.query('SELECT coordlat, coordlng, enseigne FROM store', (error, results) => {
+  connection.query('SELECT coordlat, coordlng, enseigne FROM store WHERE statut = 1', (error, results) => {
     if (error){
       console.log("error", error);
       res.status(500).json({ error: "Une erreur s'est produite lors de la requête à la base de données" });
@@ -51,6 +52,7 @@ app.get('/api/data', (req, res) => {
   });
 });
 
+//Création boutiques
 app2.post('/api/data2', (req, res) => {
   let sql = req.body.sql;
   connection.query(sql, (error, results) => {

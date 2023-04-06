@@ -1,6 +1,6 @@
 <?php
 
-$page_title =" Administration - CTCBD.com";
+$page_title =" Fondateur - CTCBD.com";
 
 ob_start()
 ?>
@@ -14,31 +14,77 @@ ob_start()
         <h1 class="titreAccueil">Espace Fondateur<br>  </h1>
         <br>
         <br>
+        <form action="#" method="POST" id="recherche">
+            <label for="coordlat">Rechercher un utilisateur :</label>
+            <input type="text" id="recherche_boutique" name="recherche_boutique">
+            <input type="submit" id="rechercher" name="rechercher">
+        </form>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>Email</th>
+      <th>Numéro</th>
+      <th>Statut</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php 
+    if(isset($_POST['rechercher'])){
+        $recherche = $_POST['recherche_boutique'];
+        $requeteValidationUser= "SELECT * FROM users WHERE (prenom LIKE '%$recherche%' OR nom LIKE '%$recherche%' OR id LIKE '%$recherche%' OR email LIKE '%$recherche%' OR numero LIKE '%$recherche%' OR statut LIKE '%$recherche%')";
+    } else {
+        $requeteValidationUser= 'SELECT * FROM users ';
+    }
+
+
+    $Validation = $conn -> prepare($requeteValidationUser);
+    
+    $Validation -> execute();
+
+            
+    while($AllValidation = $Validation -> fetch()){ 
+        ?>
+      <tr class="tr_données">
+        <td class="td_données"><?= $AllValidation['id']; ?></td>
+        <td class="td_données"><?= $AllValidation['prenom']; ?></td>
+        <td class="td_données"><?= $AllValidation['nom']; ?></td>
+        <td class="td_données"><?= $AllValidation['email']; ?></td>
+        <td class="td_données"><?= $AllValidation['numero']; ?></td>
+        <td class="td_données"><?= $AllValidation['statut']; ?></td>
+        <td class="td_données">
+          <form method="POST" action="" id="operation_refu">
+            <input type="hidden" name="idUser2" id="idUser2" value="<?=$AllValidation['id']?>">
+            <input type="submit" name="buttonRefus" id="idUser2" value="Bannir">
+          </form>
+        </td>
+      </tr>
+    <?php } ?>
+  </tbody>
+</table>
+
+
+</main>
+
 
 
 <?php
+
+if(isset($_POST['buttonRefus'])){
+    $update = 'DELETE FROM users WHERE id = ?;';
+    $updateUsers = $conn -> prepare($update);
+    $updateUsers -> execute([$_POST['idUser2']]);
+}
+
+
 $page_content = ob_get_clean();
 
 ?>
+
+
+
+

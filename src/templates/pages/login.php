@@ -21,6 +21,23 @@ if (isset($_POST['submit'])) {
     $_SESSION['user'] = $user; 
     header('Location: /?page=accueilUser');
     exit;
+    /*if ($_SESSION['user']['statut'] === 5000){
+      header('Location: /?page=espaceFondateur');
+      exit;
+    } else if ($_SESSION['user']['statut'] === 2000){
+      header('Location: /?page=espaceAdmin');
+      exit;
+    } else if ($_SESSION['user']['statut'] === 10){
+      header('Location: /?page=accueilUser');
+      exit;
+    } else if ($_SESSION['user']['statut'] === 1){
+      header('Location: /?page=accueilInvité');
+      exit;
+    } else if ($_SESSION['user']['statut'] === 0){
+      header('Location: /?page=espaceBanni');
+      exit;
+    }*/
+
   } else {
     // l'utilisateur n'existe pas ou les informations sont incorrectes
     $errorMessage = 'Email ou mot de passe incorrect';

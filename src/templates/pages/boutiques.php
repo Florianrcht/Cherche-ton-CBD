@@ -23,8 +23,10 @@ ob_start()
 <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
      crossorigin=""></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.js"></script>
 <script type="module" src="../../assets/js/boutiques/boutiques.js"></script>
+
+
 
 <div id="map"></div>
 

@@ -14,7 +14,7 @@
   
     <nav>
 
-      <a href="/?page=accueilUser" class="nav-icon" aria-label="visit homepage" aria-current="page">
+      <a href="/?page=accueilInvité" class="nav-icon" aria-label="visit homepage" aria-current="page">
         <img src="assets/imgs/weed.png" alt="weed icon">
         <span>ChercheTaFrappe</span>
       </a>
@@ -26,7 +26,7 @@
           <span></span>
         </button>
         <div class="navlinks-container">
-          <a href="/?page=accueilUser" aria-current="page">Home</a>
+          <a href="/?page=accueilInvité" aria-current="page">Home</a>
           <a href="/?page=boutiques">Les Shops</a>
           <a href="/?page=producteur">Votre Magasin</a>
           <a href="/?page=contact">Contact</a>
@@ -37,7 +37,8 @@
         <a href="#" class="sign-user" aria-label="Sign in page">
         </a>
         <div class="sign-btns">
-          <a href="/?page=profil" type="button" id="inscription" ><?= $_SESSION['user']['prenom']?></a>
+          <a href="/?page=register" type="button" id="inscription" >Inscription</a>
+          <a href="/?page=login" type="button" id="connexion" >Connexion</a>
         </div>
       </div>
     </nav>
