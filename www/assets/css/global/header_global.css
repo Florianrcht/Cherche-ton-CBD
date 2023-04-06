@@ -201,6 +201,34 @@ nav {
   .sign-btns {
     display: none;
   }
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 1;
+  }
+  
+  .option {
+    background-color: red;
+  }
+  .dropdown-menu, .option {
+    display: block;
+    padding: 5px 10px;
+    color: #333333;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #eeeeee;
+  }
+  
+  
   .sign-user {
     display: block;
     cursor: pointer;
