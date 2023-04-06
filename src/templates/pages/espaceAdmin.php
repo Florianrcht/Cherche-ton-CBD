@@ -36,9 +36,9 @@ ob_start()
     <?php 
         if(isset($_POST['rechercher'])){
             $recherche = $_POST['recherche_boutique'];
-            $requeteValidationUser= "SELECT * FROM store WHERE (id LIKE '%$recherche%' OR id_producteur LIKE '%$recherche%' OR enseigne LIKE '%$recherche%' OR adresse LIKE '%$recherche%' OR numero LIKE '%$recherche%' OR email LIKE '%$recherche%' OR web LIKE '%$recherche%' OR type LIKE '%$recherche%')";
+            $requeteValidationUser= "SELECT * FROM store WHERE statut=0 AND ( id LIKE '%$recherche%' OR id_producteur LIKE '%$recherche%' OR enseigne LIKE '%$recherche%' OR adresse LIKE '%$recherche%' OR numero LIKE '%$recherche%' OR email LIKE '%$recherche%' OR web LIKE '%$recherche%' OR type LIKE '%$recherche%')";
         } else {
-            $requeteValidationUser= 'SELECT * FROM store ';
+            $requeteValidationUser= 'SELECT * FROM store WHERE statut=0 ';
         }
 
     $Validation = $conn -> prepare($requeteValidationUser);
@@ -56,15 +56,16 @@ ob_start()
         <td class="td_données"><?= $AllValidation['web']; ?></td>
         <td class="td_données"><?= $AllValidation['type']; ?></td>
         <td class="td_données">
-        <form method="POST" action="" id="operation_auto">
-                        <input type="hidden" name="idUser1" id="idUser1" value="<?=$AllValidation['id']  ?>">
-                        <input type="submit" name="buttonAcceptation" id="idUser1" value="Autorisé">
-                    </form>
-          <form method="POST" action="" id="operation_refu">
-            <input type="hidden" name="idUser2" id="idUser2" value="<?=$AllValidation['id']?>">
-            <input type="submit" name="buttonRefus" id="idUser2" value="Bannir">
-          </form>
+            <form method="POST" action="" id="operation_auto">
+                <input type="hidden" name="IdUser1" value="<?=$AllValidation['id']?>">
+                <input type="submit" id="IdUser1" name="buttonAcceptation" value="Autorisé">
+            </form>
+            <form method="POST" action="" id="operation_refu">
+                <input type="hidden" name="IdUser2" value="<?=$AllValidation['id']?>">
+                <input type="submit" id="IdUser2" name="buttonRefus" value="Bannir">
+            </form>
         </td>
+
       </tr>
     <?php } ?>
   </tbody>
@@ -79,14 +80,15 @@ ob_start()
 if(isset($_POST['buttonAcceptation'])){
     $update = 'UPDATE store SET statut = 1 WHERE id = ?;';
     $updateUsers = $conn -> prepare($update);
-    $updateUsers -> execute([$_POST['idUser1']]);
+    $updateUsers -> execute([$_POST['IdUser1']]);
 }
 
 if(isset($_POST['buttonRefus'])){
     $update = 'DELETE FROM store WHERE id = ?;';
     $updateUsers = $conn -> prepare($update);
-    $updateUsers -> execute([$_POST['idUser2']]);
+    $updateUsers -> execute([$_POST['IdUser2']]);
 }
+
 
 
 $page_content = ob_get_clean();
